@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-y7#7qd4p#5%m1^i5ms#yik08(m*$2akf4c32e^a47soo*36f6(
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net'
+    '8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net',
+    'yourdomain.com'
 ]
 
 CRSF_TRUSTED_ORIGINS = [
