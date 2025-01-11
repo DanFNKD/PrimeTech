@@ -26,14 +26,12 @@ SECRET_KEY = 'django-insecure-y7#7qd4p#5%m1^i5ms#yik08(m*$2akf4c32e^a47soo*36f6(
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net',
-    'yourdomain.com'
+    '8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net'
 ]
 
-CRSF_TRUSTED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = [
     'https://8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net'
 ]
-
 
 # Application definition
 
@@ -88,6 +86,16 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'primetech.wsgi.application'
 
