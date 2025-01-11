@@ -25,7 +25,13 @@ SECRET_KEY = 'django-insecure-y7#7qd4p#5%m1^i5ms#yik08(m*$2akf4c32e^a47soo*36f6(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = [
+    '8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net'
+]
+
+CRSF_TRUSTED_ORIGINS = [
+    'https://8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net'
+]
 
 
 # Application definition
@@ -37,6 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'primetech.urls'
@@ -66,6 +77,16 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
 
 WSGI_APPLICATION = 'primetech.wsgi.application'
 
