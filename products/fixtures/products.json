@@ -1,0 +1,106 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "fc25-xbox-series-x",
+            "name": "FC25 (Xbox Series X)",
+            "description": "EA SPORTS FC™ 25 has the best players from the biggest clubs and competitions around the globe, with match data from the world’s top leagues powering how 19,000+ players from 700+ authentic clubs move, play, and win in every match.",
+            "price": 54.99,
+            "category": 2,
+            "rating": 4.5,
+            "image": "fc25_xbox.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "beats-studio-pro-black",
+            "name": "Beats Studio Pro",
+            "description": "The Beats Studio Pro custom acoustic platform delivers an immersive listening experience. Each custom 40mm driver has been engineered for optimal clarity, with near-zero distortion even at high volume — an improvement of up to 80% compared to Beats Studio3, providing increased audio fidelity. An integrated digital processor optimises the final frequency response for a powerful yet balanced sound profile, crafted to bring out the subtle details of whatever you are listening to.",
+            "price": 349.99,
+            "category": 3,
+            "rating": 4.8,
+            "image": "beats_studio_pro.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "blackops6-xbox",
+            "name": "Call of Duty Black Ops 6 (Xbox Series X)",
+            "description": "Black Ops 6 is a spy action thriller set in the early 90s, a period of transition and upheaval in global politics, characterised by the end of the Cold War and the rise of the United States as a single superpower. With a mind-bending narrative, and unbound by the rules of engagement, this is signature Black Ops across a cinematic single-player Campaign, a best-in-class Multiplayer experience, and with the epic return of Round-Based Zombies.",
+            "price": 54.99,
+            "category": 2,
+            "rating": 4.7,
+            "image": "blackops_xbox.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "jbl-go-4",
+            "name": "JBL Go 4 Portable Speaker",
+            "description": "The JBL Go 4 fits in the palm of your hand, delivering JBL Pro Sound with rich, punchy bass. It's both dustproof and waterproof, meaning that you can take it with you in any weather.",
+            "price": 54.99,
+            "category": 3,
+            "rating": 4.7,
+            "image": "jbl_go.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "lg-tv-65",
+            "name": "LG OLED 65 inch",
+            "description": "The LG OLED C4 also boasts an impressive collection of smart features like built-in voice control and a slick user-interface that makes daily operation a breeze. And it’s the perfect TV for gamers looking for next-gen support, with a collection of advanced gaming features like 4K/120Hz and lightning-fast response times.",
+            "price": 1499.99,
+            "category": 1,
+            "rating": 4.9,
+            "image": "lg_tv.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "ninja-airfryer-foodi-flexdrawer",
+            "name": "Ninja Foodi Flexdrawer Airfryer",
+            "description": "Introducing Ninja Foodi FlexDrawer, the extra-large capacity air fryer that adapts to fit every meal. Cook in 2 independent cooking zones with Ninja’s signature Dual Zone Technology, or remove the divider to cook larger foods in the 10.4L MegaZone.",
+            "price": 199.99,
+            "category": 5,
+            "rating": 4.8,
+            "image": "ninja_airfryer.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "oralb-pro1000-toothbrush",
+            "name": "Oral-B Pro 1000 Electric Toothbrush",
+            "description": "Oral-B Pro 1000 Rechargeable Electric Toothbrush, Black, 1-count, provides a clinically proven superior deep clean in hard-to-reach areas vs. a regular manual toothbrush. 300% MORE plaque removal along the gumline versus a regular manual toothbrush.",
+            "price": 46.99,
+            "category": 6,
+            "rating": 4.3,
+            "image": "oralb_pro1000.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "xbox-series-x",
+            "name": "Xbox Series X Console",
+            "description": "Introducing Xbox Series X, the fastest, most powerful Xbox ever. Play thousands of titles from four generations of consoles – all games look and play best on Xbox Series X.",
+            "price": 479.99,
+            "category": 2,
+            "rating": 4.9,
+            "image": "xbox_seriesx.jpg"
+        }
+    }
+]

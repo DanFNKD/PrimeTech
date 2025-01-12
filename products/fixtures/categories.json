@@ -1,0 +1,13 @@
+[
+    {"pk": 1, "model": "products.category", "fields": {"name": "tvs", "friendly_name": "TVs"}},
+    {"pk": 2, "model": "products.category", "fields": {"name": "gaming", "friendly_name": "Gaming"}},
+    {"pk": 3, "model": "products.category", "fields": {"name": "music", "friendly_name": "Music & Audio"}},
+    {"pk": 4, "model": "products.category", "fields": {"name": "vr", "friendly_name": "Virtual Reality"}},
+    {"pk": 5, "model": "products.category", "fields": {"name": "kitchen", "friendly_name": "Kitchen"}},
+    {"pk": 6, "model": "products.category", "fields": {"name": "bathroom", "friendly_name": "Bathroom"}},
+    {"pk": 7, "model": "products.category", "fields": {"name": "cleaning", "friendly_name": "Cleaning"}},
+    {"pk": 8, "model": "products.category", "fields": {"name": "deals", "friendly_name": "Deals"}},
+    {"pk": 9, "model": "products.category", "fields": {"name": "clearance", "friendly_name": "Clearance"}},
+    {"pk": 10, "model": "products.category", "fields": {"name": "all_specials", "friendly_name": "All Specials"}},
+    {"pk": 11, "model": "products.category", "fields": {"name": "new_arrivals", "friendly_name": "New Arrivals"}}
+]
