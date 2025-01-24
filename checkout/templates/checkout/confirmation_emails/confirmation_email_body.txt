@@ -1,0 +1,26 @@
+Hello {{ order.full_name }},
+
+Thank you for shopping with Boutique Ado! We're thrilled to confirm your order. Here are the details:
+
+**Order Details**
+- **Order Number**: {{ order.order_number }}
+- **Order Date**: {{ order.date|date:"F j, Y" }}
+
+**Cost Summary**
+- **Order Total**: ${{ order.order_total|floatformat:2 }}
+- **Delivery Cost**: ${{ order.delivery_cost|floatformat:2 }}
+- **Grand Total**: ${{ order.grand_total|floatformat:2 }}
+
+**Shipping Information**
+Your order will be shipped to:
+{{ order.street_address1 }}
+{{ order.street_address2|default_if_none:"" }}
+{{ order.town_or_city }}, {{ order.country }}
+
+We have your contact number as **{{ order.phone_number }}**.
+
+If you have any questions or need assistance, please reach out to us at **{{ contact_email }}**.
+
+We hope you enjoy your purchase and look forward to seeing you again!
+
+**The PrimeTech Team**
