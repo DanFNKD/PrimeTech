@@ -39,7 +39,11 @@
                             {% for item in bag_items %}
                                 <tr>
                                     <td class="p-3 w-25">
-                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                        {% if item.product.image %}
+                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                        {% else %}
+                                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                        {% endif %}
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
@@ -63,7 +67,8 @@
                                                     </div>
                                                     <input class="form-control form-control-sm qty_input" type="number"
                                                         name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                                        data-item_id="{{ item.item_id }}"
+                                                        id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-qty btn btn-sm btn-black rounded-0"
                                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
@@ -136,7 +141,7 @@
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
-    });
+    })
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
@@ -149,6 +154,6 @@
          .done(function() {
              location.reload();
          });
-    });
+    })
 </script>
 {% endblock %}
