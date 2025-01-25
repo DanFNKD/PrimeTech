@@ -1,3 +1,13 @@
+/*  Logo Styling */
+.logo {
+    width: 150px; /* Adjust as necessary */
+    height: auto; /* Maintain aspect ratio */
+    display: inline-block;
+    margin: 0 auto; /* Optional: Center logo */
+}
+
+/* General Styles */
+
 html {
     height: 100%;
 }
@@ -17,10 +27,6 @@ body {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-}
-
-.logo-font {
-    text-transform: uppercase;
 }
 
 .main-logo-link {
