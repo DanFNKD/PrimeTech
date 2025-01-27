@@ -4,10 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
+from .models import Product, Category, Wishlist, WishlistItem
 from .forms import ProductForm
+from profiles.models import UserProfile
 
-# Create your views here.
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -61,7 +61,6 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
@@ -137,3 +136,57 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    """
+    Add a product to the user's default wishlist.
+    If the user doesn't have one, create it automatically.
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    user_profile = request.user.userprofile
+
+    wishlist, created = Wishlist.objects.get_or_create(
+        user_profile=user_profile,
+        name="My Wishlist"
+    )
+
+    WishlistItem.objects.get_or_create(wishlist=wishlist, product=product)
+
+    messages.success(request, f'Added {product.name} to your wishlist.')
+    return redirect(reverse('view_wishlist'))
+
+
+@login_required
+def view_wishlist(request):
+    """
+    Display the user's default wishlist.
+    If the user doesn't have one, create one, or you can handle it differently
+    (for instance, show an empty state).
+    """
+    user_profile = request.user.userprofile
+    wishlist = Wishlist.objects.filter(user_profile=user_profile, name="My Wishlist").first()
+
+    if not wishlist:
+        wishlist = Wishlist.objects.create(
+            user_profile=user_profile,
+            name="My Wishlist"
+        )
+
+    context = {
+        'wishlist': wishlist,
+    }
+    return render(request, 'products/wishlist.html', context)
+
+
+@login_required
+def remove_from_wishlist(request, item_id):
+    """
+    Remove a specific item from the user's wishlist.
+    """
+    item = get_object_or_404(WishlistItem, pk=item_id,
+                             wishlist__user_profile=request.user.userprofile)
+    item.delete()
+    messages.success(request, 'Item removed from your wishlist.')
+    return redirect(reverse('view_wishlist'))
