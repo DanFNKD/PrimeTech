@@ -20,13 +20,28 @@ body {
     font-family: 'Lato';
 }
 
-/* from Bulma */
+/* Navbar & Icon Fixes */
+
+.list-inline-item a {
+    display: flex;
+    align-items: center; /* Ensures icons and text align properly */
+    gap: 5px; /* Adds spacing between icon and text */
+    padding: 5px 10px; /* Adds breathing room */
+}
+
+.list-inline-item a i {
+    font-size: 1.5rem; /* Keeps icons at a good size */
+    vertical-align: middle; /* Ensures icons align with text */
+    margin-right: 5px; /* Space between icon and text */
+}
+
 .icon {
     align-items: center;
     display: inline-flex;
     justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.8rem; /* Increase height slightly */
+    width: 1.8rem;  /* Increase width slightly */
+    vertical-align: middle; /* Ensure icons align with text */
 }
 
 .main-logo-link {
@@ -270,7 +285,6 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
-
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
