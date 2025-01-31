@@ -43,7 +43,9 @@
     <title>PrimeTech {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top">
+
+    <!-- Wrapped Navbar Inside a Fixed Container -->
+    <header class="container-fluid fixed-top fixed-container">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -119,7 +121,6 @@
             </div>
         </div>
 
-        <!-- ✅ Keeping Main Navigation -->
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
@@ -131,7 +132,6 @@
             </nav>
         </div>
 
-        <!-- ✅ Keeping Free Delivery Banner -->
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
                 <h4 class="logo-font my-1">
@@ -141,8 +141,10 @@
         </div>
     </header>
 
-    {% block content %}
-    {% endblock %}
+    <div class="content-wrapper container mt-3"> 
+        {% block content %}
+        {% endblock %}
+    </div>
 
     {% block postloadjs %}
     <script type="text/javascript">
