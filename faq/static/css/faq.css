@@ -1,0 +1,98 @@
+/* FAQ Page Styling */
+.faq-container {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 40px 40px;
+}
+
+/* FAQ Title */
+.faq-container h1 {
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* FAQ List */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Individual FAQ Items */
+.faq-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+/* Adjusted Font Sizes */
+.question {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.answer {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* No FAQs Message */
+.no-faqs {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    margin-top: 30px;
+}
+
+/* Back to Products Button */
+.faq-back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.faq-back-btn a {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-back-btn a:hover {
+    background: #222;
+    color: white;
+}
+
+/* Responsive Design Fixes */
+@media (max-width: 991px) {
+    .faq-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .faq-list {
+        gap: 15px;
+    }
+
+    .question {
+        font-size: 1.1rem;
+    }
+
+    .answer {
+        font-size: 1.2rem;
+    }
+}
