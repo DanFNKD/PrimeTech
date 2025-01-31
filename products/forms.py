@@ -21,16 +21,14 @@ class ProductForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
-    """ Form for submitting product reviews """
     class Meta:
         model = Review
-        fields = ['rating', 'comment']
-        labels = {
-            'rating': 'Rating (1-5)',
-            'comment': 'Your Review'
-        }
-        widgets = {
-            'rating': forms.Select(choices=[(i, i) for i in range(1, 6)], 
-                                   attrs={'class': 'border-black rounded-0'}),
-            'comment': forms.Textarea(attrs={'class': 'border-black rounded-0', 'rows': 4}),
-        }
+        fields = ['rating']
+
+    rating = forms.ChoiceField(choices=[(i, str(i)) for i in range(1, 6)], widget=forms.Select())
+
+    def clean_rating(self):
+        rating = int(self.cleaned_data.get('rating'))
+        if rating not in range(1, 6):
+            raise forms.ValidationError("Invalid rating. Choose a number between 1 and 5.")
+        return rating

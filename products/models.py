@@ -60,17 +60,16 @@ class WishlistItem(models.Model):
 
 
 class Review(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="reviews")
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='reviews')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])  # 1-5 star ratings
-    comment = models.TextField()
+    rating = models.PositiveIntegerField(choices=[(i, str(i)) for i in range(1, 6)]) 
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
-        return f"Review by {self.user.username} for {self.product.name}"
+        return f"{self.user.username} rated {self.product.name} {self.rating}★"
 
     def save(self, *args, **kwargs):
         """ Override save method to update product rating after saving a review """

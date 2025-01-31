@@ -58,14 +58,17 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
+    """ A view to show individual product details and reviews """
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product).order_by('-created_at')
-    avg_rating = reviews.aggregate(Avg('rating'))['rating__avg']
+
+    avg_rating = reviews.filter(rating__gte=1, rating__lte=5).aggregate(Avg('rating'))['rating__avg']
+    avg_rating = round(avg_rating) if avg_rating else 0 
 
     context = {
         'product': product,
         'reviews': reviews,
-        'avg_rating': avg_rating or 0,
+        'avg_rating': avg_rating,  
         'review_form': ReviewForm(),
     }
 
@@ -79,13 +82,16 @@ def submit_review(request, product_id):
     if request.method == "POST":
         form = ReviewForm(request.POST)
         if form.is_valid():
-            review = form.save(commit=False)
-            review.product = product
-            review.user = request.user
-            review.save()
-            messages.success(request, "Your review has been submitted.")
+            review, created = Review.objects.update_or_create(
+                product=product, user=request.user,
+                defaults={'rating': form.cleaned_data['rating']}
+            )
+            if created:
+                messages.success(request, "Your rating has been submitted.")
+            else:
+                messages.success(request, "Your rating has been updated.")
         else:
-            messages.error(request, "There was an error submitting your review.")
+            messages.error(request, "There was an error submitting your rating.")
 
     return redirect(reverse('product_detail', args=[product.id]))
 
