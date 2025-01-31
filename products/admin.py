@@ -1,29 +1,16 @@
 from django.contrib import admin
-from .models import Product, Category, Wishlist, WishlistItem
+from .models import Product, Category, Wishlist, WishlistItem, Review
 
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
         'name',
-        'get_category',
         'price',
         'rating',
         'image',
     )
     ordering = ('sku',)
-
-    def get_category(self, obj):
-        """
-        Returns the product's category's friendly_name or name.
-        If there's no category, returns 'No category'.
-        """
-        if obj.category:
-            return obj.category.friendly_name or obj.category.name
-        return "No category"
-
-    # The label shown in the admin list header
-    get_category.short_description = 'Category'
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -51,7 +38,14 @@ class WishlistItemAdmin(admin.ModelAdmin):
     ordering = ('-added_at',)
 
 
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('product', 'user', 'rating', 'created_at')
+    list_filter = ('rating', 'created_at')
+    search_fields = ('user__username', 'product__name', 'content')
+
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Wishlist, WishlistAdmin)
 admin.site.register(WishlistItem, WishlistItemAdmin)
+admin.site.register(Review, ReviewAdmin)

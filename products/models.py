@@ -1,12 +1,13 @@
 from django.db import models
 from profiles.models import UserProfile
+from django.contrib.auth.models import User
+from django.db.models import Avg
 
 
 class Category(models.Model):
-
     class Meta:
         verbose_name_plural = 'Categories'
-        
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -23,12 +24,18 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.name
+
+    def update_rating(self):
+        """ Update the product's average rating based on reviews """
+        avg_rating = self.reviews.aggregate(Avg('rating'))['rating__avg']
+        self.rating = round(avg_rating, 1) if avg_rating else None
+        self.save()
 
 
 class Wishlist(models.Model):
@@ -46,7 +53,26 @@ class WishlistItem(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ('wishlist', 'product') 
+        unique_together = ('wishlist', 'product')
 
     def __str__(self):
         return f"{self.product.name} in {self.wishlist.name}"
+
+
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="reviews")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])  # 1-5 star ratings
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"Review by {self.user.username} for {self.product.name}"
+
+    def save(self, *args, **kwargs):
+        """ Override save method to update product rating after saving a review """
+        super().save(*args, **kwargs)
+        self.product.update_rating()

@@ -108,10 +108,12 @@
                                                     </a>
                                                 </p>
                                             {% endif %}
+                                            
+                                            <!-- AVERAGE RATING DISPLAY -->
                                             {% if product.rating %}
                                                 <small class="text-muted">
                                                     <i class="fas fa-star mr-1"></i>
-                                                    {{ product.rating }} / 5
+                                                    {{ product.rating|floatformat:1 }} / 5
                                                 </small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>

@@ -1,18 +1,16 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.db.models.functions import Lower
 
-from .models import Product, Category, Wishlist, WishlistItem
-from .forms import ProductForm
+from .models import Product, Category, Wishlist, WishlistItem, Review
+from .forms import ProductForm, ReviewForm
 from profiles.models import UserProfile
 
 
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
-
-    products = Product.objects.all()
+    products = Product.objects.all().annotate(avg_rating=Avg('reviews__rating'))
     query = None
     categories = None
     sort = None
@@ -32,7 +30,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -60,19 +58,48 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product).order_by('-created_at')
+    avg_rating = reviews.aggregate(Avg('rating'))['rating__avg']
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'avg_rating': avg_rating or 0,
+        'review_form': ReviewForm(),
     }
 
     return render(request, 'products/product_detail.html', context)
 
 
 @login_required
+def submit_review(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            messages.success(request, "Your review has been submitted.")
+        else:
+            messages.error(request, "There was an error submitting your review.")
+
+    return redirect(reverse('product_detail', args=[product.id]))
+
+
+@login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id, user=request.user)
+    review.delete()
+    messages.success(request, "Your review has been deleted.")
+    return redirect(reverse('product_detail', args=[review.product.id]))
+
+
+@login_required
 def add_product(request):
-    """ Add a product to the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -98,7 +125,6 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -127,7 +153,6 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -140,10 +165,6 @@ def delete_product(request, product_id):
 
 @login_required
 def add_to_wishlist(request, product_id):
-    """
-    Add a product to the user's default wishlist.
-    If the user doesn't have one, create it automatically.
-    """
     product = get_object_or_404(Product, pk=product_id)
     user_profile = request.user.userprofile
 
@@ -160,11 +181,6 @@ def add_to_wishlist(request, product_id):
 
 @login_required
 def view_wishlist(request):
-    """
-    Display the user's default wishlist.
-    If the user doesn't have one, create one, or you can handle it differently
-    (for instance, show an empty state).
-    """
     user_profile = request.user.userprofile
     wishlist = Wishlist.objects.filter(user_profile=user_profile, name="My Wishlist").first()
 
@@ -182,9 +198,6 @@ def view_wishlist(request):
 
 @login_required
 def remove_from_wishlist(request, item_id):
-    """
-    Remove a specific item from the user's wishlist.
-    """
     item = get_object_or_404(WishlistItem, pk=item_id,
                              wishlist__user_profile=request.user.userprofile)
     item.delete()
