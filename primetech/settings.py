@@ -28,7 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net',
-    'primetechfnkd.herokuapp.com',
+    'primetechfnkd-382d679752d9.herokuapp.com',
     'localhost',
     '127.0.0.1'
 ]
