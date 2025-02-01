@@ -13,14 +13,8 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-3">     
-                {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">
-                            {{ c.friendly_name }}
-                        </span>
-                    </a>
-                {% endfor %}
+            <div class="col text-center mt-3">
+                {# Category badges removed #}
             </div>
         </div>
         <div class="row">
@@ -109,7 +103,6 @@
                                                 </p>
                                             {% endif %}
                                             
-                                            <!-- AVERAGE RATING DISPLAY -->
                                             {% if product.rating %}
                                                 <small class="text-muted">
                                                     <i class="fas fa-star mr-1"></i>
@@ -119,7 +112,6 @@
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
                                             
-                                            <!-- ADD TO WISHLIST BUTTON (only if user is logged in) -->
                                             {% if request.user.is_authenticated %}
                                                 <div class="mt-2">
                                                     <a href="{% url 'add_to_wishlist' product.id %}"

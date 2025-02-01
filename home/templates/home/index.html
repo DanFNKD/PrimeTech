@@ -1,27 +1,24 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+{% block extra_css %}
+  <style>
+    /* Homepage-specific body override */
+    body {
+      background-color: #000 !important;
+      color: #fff !important;
+      background-image: none !important;
+    }
+  </style>
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    New products
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid d-flex flex-column min-vh-100">
+  <div class="row flex-grow-1">
+    <div class="col text-center mt-5">
+      <h1 class="display-4">Welcome to PrimeTech</h1>
+      <p class="lead">Your one-stop shop for the latest in technology.</p>
     </div>
+  </div>
+</div>
 {% endblock %}

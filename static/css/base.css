@@ -12,8 +12,6 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
-    background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
@@ -102,7 +100,7 @@ body {
     z-index: -1;
 }
 
-/* Spacing Fix - Added a container to fix navbar & header issues */
+/* Spacing Fix */
 .fixed-container {
     width: 100%;
     max-width: 100%;
@@ -115,7 +113,7 @@ body {
     padding: 20px 15px;
 }
 
-/* Pushes the content below navbar */
+/* Content Wrapper */
 .content-wrapper {
     padding-top: 164px;
 }
@@ -214,6 +212,18 @@ input[name='q']::placeholder {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* Global Banner Override */
+#delivery-banner .col {
+    background-color: gold !important;
+    color: black !important;
+}
+
+/* Global Footer Override */
+footer.bg-dark.text-white {
+    background-color: gold !important;
+    color: black !important;
 }
 
 /* Media Queries */
@@ -321,4 +331,69 @@ input[name='q']::placeholder {
     body {
         height: calc(100vh - 116px);
     }
+}
+
+/* Custom Overrides */
+footer a {
+    color: black !important;
+}
+footer a:hover {
+    color: black !important;
+}
+
+a.nav-link.d-flex.text-info {
+    color: gold !important;
+}
+
+.products-home-link {
+    color: gold !important;
+}
+
+.products-page,
+.product-details {
+    color: #000 !important;
+}
+
+.btn-outline-info {
+    color: gold !important;
+    border-color: gold !important;
+}
+.btn-outline-info:hover,
+.btn-outline-info:focus,
+.btn-outline-info:active {
+    background-color: gold !important;
+    color: black !important;
+    border-color: gold !important;
+}
+
+a[href*="view_wishlist"] i {
+    color: gold !important;
+}
+
+/* Hyperlink Overrides */
+a {
+    color: black !important;
+}
+a:hover,
+a:focus {
+    color: black !important;
+}
+
+/* Button Overrides */
+.btn-primary {
+    background-color: gold !important;
+    border-color: gold !important;
+    color: black !important;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: darkgoldenrod !important;
+    border-color: darkgoldenrod !important;
+    color: black !important;
+}
+
+/* Allauth Link Override */
+.allauth-form-inner-content a {
+    color: black !important;
 }

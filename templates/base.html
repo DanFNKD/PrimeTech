@@ -67,13 +67,7 @@
             </div>
             <div class="col-12 col-lg-4 my-auto">
                 <ul class="list-inline list-unstyled text-lg-right my-0">
-                    <!-- FAQ Link -->
-                    <li class="list-inline-item">
-                        <a class="text-black nav-link d-flex align-items-center" href="{% url 'faq' %}">
-                            <i class="fas fa-question-circle fa-lg mr-2"></i> FAQ
-                        </a>
-                    </li>
-
+                    
                     <!-- My Account Dropdown -->
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link d-flex align-items-center" href="#" id="user-options" data-toggle="dropdown"
@@ -145,6 +139,8 @@
         {% block content %}
         {% endblock %}
     </div>
+
+    {% include 'includes/footer.html' %}
 
     {% block postloadjs %}
     <script type="text/javascript">
