@@ -28,7 +28,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-danfnkd-primetech-m3w2o7c6p32.ws.codeinstitute-ide.net',
-    'primetechfnkd.herokuapp.com'
+    'primetechfnkd.herokuapp.com',
+    'localhost',
+    '127.0.0.1'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
