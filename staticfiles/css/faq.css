@@ -1,0 +1,32 @@
+body .faq-container {
+    padding: 2rem !important;
+    line-height: 1.8 !important;
+}
+body .faq-container h1 {
+    margin-bottom: 1.5rem !important;
+    line-height: 1.8 !important;
+}
+body .faq-container .faq-list .faq-item {
+    margin-bottom: 1.5rem !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid #ddd !important;
+    line-height: 1.8 !important;
+}
+body .faq-container .faq-list .faq-item .question {
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+}
+body .faq-container .faq-list .faq-item .answer {
+    margin-bottom: 1rem !important;
+}
+body .faq-container .faq-back-btn {
+    margin-top: 2rem !important;
+    text-align: center !important;
+}
+body .faq-container .faq-back-btn .btn {
+    background-color: white !important;
+    color: black !important;
+    padding: 0.75rem 1.5rem !important;
+    border: 1px solid #ccc !important;
+    margin-top: 1rem !important;
+}
