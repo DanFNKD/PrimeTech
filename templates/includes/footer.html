@@ -1,7 +1,28 @@
 <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">
-      &copy; {{ year }} PrimeTech |
-      <a href="{% url 'faq' %}" class="text-black">FAQs</a>
-    </p>
-  </footer>
-  
+  <div class="container">
+    <div class="row">
+      <!-- Newsletter Signup Section -->
+      <div class="col-md-6 text-md-left">
+        <h5>Stay Updated</h5>
+        <p>Subscribe to our newsletter for the latest updates and deals!</p>
+        <form id="newsletter-form" method="POST" action="https://herokuapp.us7.list-manage.com/subscribe/post?u=db11ee4c77c2dc7e0b9775b8f&amp;id=2779c25a8f&amp;f_id=001cc0e1f0">
+          <div class="input-group">
+            <input type="email" name="EMAIL" id="newsletter-email" class="form-control" placeholder="Enter your email" required>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+          </div>
+          <small id="newsletter-message" class="form-text"></small>
+        </form>
+      </div>
+      
+      <!-- FAQs & Copyright -->
+      <div class="col-md-6 text-md-right my-auto">
+        <p class="mb-0">
+          &copy; {{ year }} PrimeTech |
+          <a href="{% url 'faq' %}" class="text-white">FAQs</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
