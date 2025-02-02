@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
-from home.views import robots_txt
+from home.views import robots_txt, custom_404
 from .sitemaps import ProductSitemap, FAQSitemap
 
 sitemaps = {
@@ -23,3 +23,5 @@ urlpatterns = [
     path("robots.txt", robots_txt, name="robots_txt"),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'home.views.custom_404'
