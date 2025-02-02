@@ -2,6 +2,7 @@ from django.db import models
 from profiles.models import UserProfile
 from django.contrib.auth.models import User
 from django.db.models import Avg
+from django.utils.timezone import now
 
 
 class Category(models.Model):
@@ -27,6 +28,12 @@ class Product(models.Model):
     rating = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        """Returns the absolute URL for each product"""
+        return reverse("product_detail", args=[str(self.id)])
 
     def __str__(self):
         return self.name
