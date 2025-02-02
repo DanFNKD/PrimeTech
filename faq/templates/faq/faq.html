@@ -1,29 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'faq/css/faq.css' %}">
+<link rel="stylesheet" href="{% static 'css/faq.css' %}">
 {% endblock %}
-
 {% block content %}
 <div class="faq-container">
     <h1>Frequently Asked Questions</h1>
-
     {% if faqs %}
-        <div class="faq-list">
-            {% for faq in faqs %}
-                <div class="faq-item">
-                    <p class="question">{{ faq.question }}</p>
-                    <p class="answer">{{ faq.answer|linebreaks }}</p>
-                </div>
-            {% endfor %}
+    <div class="faq-list">
+        {% for faq in faqs %}
+        <div class="faq-item">
+            <p class="question">{{ faq.question }}</p>
+            <p class="answer">{{ faq.answer|linebreaks }}</p>
         </div>
+        {% endfor %}
+    </div>
     {% else %}
-        <p class="no-faqs">No FAQs available at the moment.</p>
+    <p class="no-faqs">No FAQs available at the moment.</p>
     {% endif %}
-
     <div class="faq-back-btn">
-        <a href="{% url 'products' %}" class="btn btn-black">Back to Products</a>
+        <a href="{% url 'products' %}" class="btn">Back to Products</a>
     </div>
 </div>
 {% endblock %}

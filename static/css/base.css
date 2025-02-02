@@ -1,39 +1,31 @@
-/* Logo Styling */
 .logo {
     width: 150px;
     height: auto;
     display: inline-block;
     margin: 0 auto;
 }
-
-/* General Styles */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
-
 body {
     display: flex;
     flex-direction: column;
     color: #555;
     font-family: 'Lato';
 }
-
-/* Navbar & Icon Fixes */
 .list-inline-item a {
     display: flex;
     align-items: center;
     gap: 5px;
     padding: 5px 10px;
 }
-
 .list-inline-item a i {
     font-size: 1.5rem;
     vertical-align: middle;
     margin-right: 5px;
 }
-
 .icon {
     align-items: center;
     display: inline-flex;
@@ -42,35 +34,29 @@ body {
     width: 1.8rem;
     vertical-align: middle;
 }
-
 .main-logo-link {
     width: fit-content;
 }
-
 .shop-now-button {
     background: black;
     color: white;
     min-width: 260px;
 }
-
 .btn-black {
     background: black;
     color: white;
 }
-
 .btn-outline-black {
     background: white;
     color: black !important;
     border: 1px solid black;
 }
-
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
     background: black;
     color: white !important;
 }
-
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -80,19 +66,15 @@ body {
     background: #222;
     color: white;
 }
-
 .text-black {
     color: #000 !important;
 }
-
 .border-black {
     border: 1px solid black !important;
 }
-
 .bg-black {
     background: #000 !important;
 }
-
 .overlay {
     height: 100%;
     width: 100%;
@@ -102,38 +84,29 @@ body {
     background: white;
     z-index: -1;
 }
-
-/* Spacing Fix */
 .fixed-container {
     width: 100%;
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
 }
-
 .header-container {
     max-width: 100%;
     padding: 20px 15px;
 }
-
-/* Content Wrapper */
 .content-wrapper {
     flex: 1;
     padding-top: 164px;
 }
-
-/* Adjust spacing for mobile */
 @media (max-width: 991px) {
     .content-wrapper {
         padding-top: 116px;
     }
 }
-
 a.category-badge > span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
 }
-
 .btt-button {
     height: 42px;
     width: 42px;
@@ -141,34 +114,26 @@ a.category-badge > span.badge:hover {
     bottom: 10px;
     right: 10px;
 }
-
 .btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
 }
-
 input[name='q']::placeholder {
     color: #aab7c4;
 }
-
-/* Bootstrap Toast Notifications */
 .message-container {
     position: fixed;
     top: 72px;
     right: 15px;
     z-index: 99999999999;
 }
-
 .custom-toast {
     overflow: visible;
 }
-
 .toast-capper {
     height: 2px;
 }
-
-/* Notification Arrow Styles */
 .arrow-up {
     width: 0;
     height: 0;
@@ -179,83 +144,62 @@ input[name='q']::placeholder {
     top: -10px;
     right: 36px;
 }
-
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
-
 .arrow-secondary {
     border-bottom-color: #6c757d !important;
 }
-
 .arrow-success {
     border-bottom-color: #28a745 !important;
 }
-
 .arrow-danger {
     border-bottom-color: #dc3545 !important;
 }
-
 .arrow-warning {
     border-bottom-color: #ffc107 !important;
 }
-
 .arrow-info {
     border-bottom-color: #17a2b8 !important;
 }
-
 .arrow-light {
     border-bottom-color: #f8f9fa !important;
 }
-
 .arrow-dark {
     border-bottom-color: #343a40 !important;
 }
-
 .bag-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
 }
-
-/* Global Banner Override */
 #delivery-banner .col {
     background-color: gold !important;
     color: black !important;
 }
-
-/* Global Footer Override */
 footer.bg-dark.text-white {
     background-color: gold !important;
     color: black !important;
 }
-
-/* Media Queries */
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
     }
 }
-
-/* Allauth Form Styling */
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
     color: #6c757d;
 }
-
 .allauth-form-inner-content input {
     border-color: #000;
     border-radius: 0;
 }
-
 .allauth-form-inner-content label:not([for='id_remember']) {
     display: none;
 }
-
 .allauth-form-inner-content input::placeholder {
     color: #aab7c4;
 }
-
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
     display: inline-block;
@@ -272,24 +216,19 @@ footer.bg-dark.text-white {
     border-radius: 0;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
-
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {
     color: #fff;
     background-color: #222;
     border-color: #222;
 }
-
 .allauth-form-inner-content a {
     color: #17a2b8;
 }
-
-/* Product Form */
 .btn-file {
     position: relative;
     overflow: hidden;
 }
-
 .btn-file input[type="file"] {
     position: absolute;
     top: 0;
@@ -299,19 +238,15 @@ footer.bg-dark.text-white {
     opacity: 0;
     cursor: pointer;
 }
-
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
     border-color: #dc3545;
 }
-
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
 }
-
-/* Fixed Spacing Issues on Desktop */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -320,45 +255,34 @@ footer.bg-dark.text-white {
         left: 0;
         z-index: 1030;
     }
-
     .header-container {
         padding-top: 164px;
     }
 }
-
-/* Adjustments for Mobile */
 @media (max-width: 991px) {
     .header-container {
         padding-top: 116px;
     }
-
     body {
-        /* Remove the calc() height in mobile so flex layout works correctly */
         height: 100%;
     }
 }
-
-/* Custom Overrides */
 footer a {
     color: black !important;
 }
 footer a:hover {
     color: black !important;
 }
-
 a.nav-link.d-flex.text-info {
     color: gold !important;
 }
-
 .products-home-link {
     color: gold !important;
 }
-
 .products-page,
 .product-details {
     color: #000 !important;
 }
-
 .btn-outline-info {
     color: gold !important;
     border-color: gold !important;
@@ -370,12 +294,9 @@ a.nav-link.d-flex.text-info {
     color: black !important;
     border-color: gold !important;
 }
-
 a[href*="view_wishlist"] i {
     color: gold !important;
 }
-
-/* Hyperlink Overrides */
 a {
     color: black !important;
 }
@@ -383,8 +304,6 @@ a:hover,
 a:focus {
     color: black !important;
 }
-
-/* Button Overrides */
 .btn-primary {
     background-color: gold !important;
     border-color: gold !important;
@@ -397,8 +316,24 @@ a:focus {
     border-color: darkgoldenrod !important;
     color: black !important;
 }
-
-/* Allauth Link Override */
 .allauth-form-inner-content a {
     color: black !important;
+}
+.custom-btn-size {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+}
+.qty_input,
+.input-group .btn {
+    height: 2.5rem !important;
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.9rem !important;
+}
+.navbar .input-group .form-control,
+.navbar .input-group-append .btn {
+    height: 2.5rem !important;
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
 }

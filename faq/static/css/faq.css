@@ -1,98 +1,32 @@
-/* FAQ Page Styling */
-.faq-container {
-    max-width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 40px 40px 40px;
+body .faq-container {
+    padding: 2rem !important;
+    line-height: 1.8 !important;
 }
-
-/* FAQ Title */
-.faq-container h1 {
-    text-align: center;
-    color: black;
-    font-size: 2rem;
-    margin-bottom: 30px;
+body .faq-container h1 {
+    margin-bottom: 1.5rem !important;
+    line-height: 1.8 !important;
 }
-
-/* FAQ List */
-.faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+body .faq-container .faq-list .faq-item {
+    margin-bottom: 1.5rem !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid #ddd !important;
+    line-height: 1.8 !important;
 }
-
-/* Individual FAQ Items */
-.faq-item {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid black;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    margin-left: 20px;
+body .faq-container .faq-list .faq-item .question {
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
 }
-
-/* Adjusted Font Sizes */
-.question {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 5px;
+body .faq-container .faq-list .faq-item .answer {
+    margin-bottom: 1rem !important;
 }
-
-.answer {
-    font-size: 1.3rem;
-    color: #333;
-    line-height: 1.6;
+body .faq-container .faq-back-btn {
+    margin-top: 2rem !important;
+    text-align: center !important;
 }
-
-/* No FAQs Message */
-.no-faqs {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #777;
-    margin-top: 30px;
-}
-
-/* Back to Products Button */
-.faq-back-btn {
-    display: block;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.faq-back-btn a {
-    background: black;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.faq-back-btn a:hover {
-    background: #222;
-    color: white;
-}
-
-/* Responsive Design Fixes */
-@media (max-width: 991px) {
-    .faq-container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .faq-list {
-        gap: 15px;
-    }
-
-    .question {
-        font-size: 1.1rem;
-    }
-
-    .answer {
-        font-size: 1.2rem;
-    }
+body .faq-container .faq-back-btn .btn {
+    background-color: white !important;
+    color: black !important;
+    padding: 0.75rem 1.5rem !important;
+    border: 1px solid #ccc !important;
+    margin-top: 1rem !important;
 }
