@@ -271,16 +271,10 @@ footer.bg-dark.text-white {
     .mt-5, .my-5 {
         margin-top: 6rem !important;
     }
-    .container .content-wrapper {
-        padding-top: 164px !important;
-    }
 }
 @media (max-width: 991px) {
     .mt-5, .my-5 {
         margin-top: 6rem !important;
-    }
-    .container .content-wrapper {
-        padding-top: 116px !important;
     }
     body {
         height: 100%;
