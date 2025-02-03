@@ -2,6 +2,7 @@ from django.contrib.sitemaps import Sitemap
 from products.models import Product
 from faq.models import FAQ
 
+
 class ProductSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
@@ -13,7 +14,8 @@ class ProductSitemap(Sitemap):
         return obj.updated_on
 
     def location(self, obj):
-        return obj.get_absolute_url() 
+        return obj.get_absolute_url()
+
 
 class FAQSitemap(Sitemap):
     changefreq = "monthly"
@@ -26,4 +28,4 @@ class FAQSitemap(Sitemap):
         return obj.updated_on
 
     def location(self, obj):
-        return obj.get_absolute_url() 
+        return obj.get_absolute_url()

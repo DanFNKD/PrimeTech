@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404
+)
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q, Avg
@@ -41,7 +43,7 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -62,13 +64,15 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product).order_by('-created_at')
 
-    avg_rating = reviews.filter(rating__gte=1, rating__lte=5).aggregate(Avg('rating'))['rating__avg']
-    avg_rating = round(avg_rating) if avg_rating else 0 
+    avg_rating = reviews.filter(
+        rating__gte=1, rating__lte=5
+    ).aggregate(Avg('rating'))['rating__avg']
+    avg_rating = round(avg_rating) if avg_rating else 0
 
     context = {
         'product': product,
         'reviews': reviews,
-        'avg_rating': avg_rating,  
+        'avg_rating': avg_rating,
         'review_form': ReviewForm(),
     }
 
@@ -116,15 +120,12 @@ def add_product(request):
             product = form.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
-        else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+        messages.error(request, 'Failed to add product. Ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
-    context = {
-        'form': form,
-    }
+    context = {'form': form}
 
     return render(request, template, context)
 
@@ -142,8 +143,7 @@ def edit_product(request, product_id):
             form.save()
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
-        else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+        messages.error(request, 'Failed to update product. Ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -174,9 +174,8 @@ def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     user_profile = request.user.userprofile
 
-    wishlist, created = Wishlist.objects.get_or_create(
-        user_profile=user_profile,
-        name="My Wishlist"
+    wishlist, _ = Wishlist.objects.get_or_create(
+        user_profile=user_profile, name="My Wishlist"
     )
 
     WishlistItem.objects.get_or_create(wishlist=wishlist, product=product)
@@ -188,24 +187,25 @@ def add_to_wishlist(request, product_id):
 @login_required
 def view_wishlist(request):
     user_profile = request.user.userprofile
-    wishlist = Wishlist.objects.filter(user_profile=user_profile, name="My Wishlist").first()
+    wishlist = Wishlist.objects.filter(
+        user_profile=user_profile, name="My Wishlist"
+    ).first()
 
     if not wishlist:
         wishlist = Wishlist.objects.create(
-            user_profile=user_profile,
-            name="My Wishlist"
+            user_profile=user_profile, name="My Wishlist"
         )
 
-    context = {
-        'wishlist': wishlist,
-    }
+    context = {'wishlist': wishlist}
     return render(request, 'products/wishlist.html', context)
 
 
 @login_required
 def remove_from_wishlist(request, item_id):
-    item = get_object_or_404(WishlistItem, pk=item_id,
-                             wishlist__user_profile=request.user.userprofile)
+    item = get_object_or_404(
+        WishlistItem, pk=item_id,
+        wishlist__user_profile=request.user.userprofile
+    )
     item.delete()
     messages.success(request, 'Item removed from your wishlist.')
     return redirect(reverse('view_wishlist'))
