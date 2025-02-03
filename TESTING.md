@@ -193,57 +193,135 @@
 
 #### Index page
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-index.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-index.png)
 
 #### Signup
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-signup.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-signup.png)
 
 #### Login
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-login.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-login.png)
 
 #### Logout
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-logout.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-logout.png)
 
 #### Profile
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-profile.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-profile.png)
 
 #### Bag
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-bag.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-bag.png)
 
 #### Products
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-products.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-products.png)
 
 #### Product detail
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-productdetail.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-productdetail.png)
 
 #### Add products
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-productsadd.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-productsadd.png)
 
 #### Edit products
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-productsedit.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-productsedit.png)
 
 #### Wishlist
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-wishlist.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-wishlist.png)
 
 #### About
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-about.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-about.png)
 
 #### FAQ
 
-![Product detail](/documentation/media/images/testing/validator/htmlvalidator-faq.png)
+![Product detail](/documentation/media/testing/validator/htmlvalidator-faq.png)
 
 ### CSS
 
 https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fprimetechfnkd-382d679752d9.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
 
+### Python
+
+#### Bag - Contexts
+![Bag Contexts](/documentation/media/testing/plinter-bagcontexts.png)
+
+#### Bag - Urls
+![Bag Urls](/documentation/media/testing/plinter-bagurls.png)
+
+#### Checkout - Admin
+![Checkout Admin](/documentation/media/testing/plinter-checkoutadmin.png)
+
+#### Checkout - Apps
+![Checkout Apps](/documentation/media/testing/plinter-checkoutapps.png)
+
+#### Checkout - Forms
+![Checkout Forms](/documentation/media/testing/plinter-checkoutforms.png)
+
+#### Checkout - Models
+![Checkout Models](/documentation/media/testing/plinter-checkoutmodels.png)
+
+#### Checkout - Signals
+![Checkout Signals](/documentation/media/testing/plinter-checkoutsignals.png)
+
+#### Checkout - URLs
+![Checkout URLs](/documentation/media/testing/plinter-checkouturls.png)
+
+#### Checkout - Views
+![Checkout Views](/documentation/media/testing/plinter-checkoutviews.png)
+
+#### Checkout - Webhook Handlers
+![Checkout Webhook Handlers](/documentation/media/testing/plinter-checkoutwebhookhandlers.png)
+
+#### Checkout - Webhooks
+![Checkout Webhooks](/documentation/media/testing/plinter-checkoutwebhooks.png)
+
+#### FAQ - Models
+![FAQ Models](/documentation/media/testing/plinter-faqmodels.png)
+
+#### PrimeTech - Settings
+![PrimeTech Settings](/documentation/media/testing/plinter-primetechsettings.png)
+
+#### PrimeTech - URLs
+![PrimeTech URLs](/documentation/media/testing/plinter-primetechurls.png)
+
+#### Products - Admin
+![Products - Admin](/documentation/media/testing/plinter-productsadmin.png)
+
+#### Products - Forms
+![Products - Forms](/documentation/media/testing/plinter-productsforms.png)
+
+#### Products - Models
+![Products - Models](/documentation/media/testing/plinter-productsmodels.png)
+
+#### Products - URLs
+![Products - URLs](/documentation/media/testing/plinter-productsurls.png)
+
+#### Products - Views
+![Products - Views](/documentation/media/testing/plinter-productsviews.png)
+
+#### Profiles - Forms
+![Profiles - Forms](/documentation/media/testing/plinter-profilesforms.png)
+
+#### Profiles - Models
+![Profiles - Models](/documentation/media/testing/plinter-profilesmodels.png)
+
+#### Profiles - Views
+![Profiles - Views](/documentation/media/testing/plinter-profilesviews.png)
+
+### JavaScript
+
+#### Checkout - Stripe elements
+![Checkout - Stripe elements](/documentation/media/testing/jshint-stripe_elements.png)
+
+#### Profiles - Countryfield
+![Profiles - Countryfield](/documentation/media/testing/jshint-countryfield.png)
+
+#### Lighthouse
+![Lighthouse](/documentation/media/testing/lighthouse.png)
