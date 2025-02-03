@@ -11,7 +11,7 @@
         {% for faq in faqs %}
         <div class="faq-item">
             <p class="question">{{ faq.question }}</p>
-            <p class="answer">{{ faq.answer|linebreaks }}</p>
+            <div class="answer">{{ faq.answer|linebreaks }}</div>
         </div>
         {% endfor %}
     </div>
