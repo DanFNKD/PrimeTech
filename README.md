@@ -1,131 +1,91 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# PrimeTech e-commerce platform
 
-Welcome Daniel Harris,
+Access the live site [here](https://primetechfnkd-382d679752d9.herokuapp.com/).
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Contents
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+* [MoSCoW priotisation](#moscow-prioritisation)
+* [User Experience design](#user-experience-design)
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## MoSCoW prioritistation and Kanban board
 
-`python3 -m http.server`
+I used a kanban board timeline [accessed here](https://github.com/users/DanFNKD/projects/5) to track my user stories and prioritise features based on the MoSCoW prioritisation method.
 
-A blue button should appear to click: _Make Public_,
+Must Haves:
+1. User Accounts and Authentication:
+  - Registration (username, email, and password)
+  - Login and logout functionality
+  - User profile pages with order history and personal details
+2. Product Catalogue and Navigation:
+  - Viewing a list of products (with pagination or infinite scrolling)
+  - Ability to filter and sort products (by price, category, rating, etc.)
+  - Viewing individual product details (including multiple images, description, pricing, and related products)
+3. Shopping Cart and Checkout:
+  - Adding products to the basket, adjusting quantities, and removing items
+  - Displaying a cart summary with a total price (including shipping calculation)
+  - Secure checkout process integrated with Stripe for payment processing
+  - Order confirmation email functionality
+4. Basic Search Functionality:
+  - Keyword search that returns matching products
+5. Deployment and Code Quality:
+  - A consistent, clean Django project structure with logical app separation
+  - All CRUD operations for products and related models are implemented
+  - The final deployed version is secure (with secret keys and credentials stored as environment variables) and free of broken links
 
-Another blue button should appear to click: _Open Browser_.
+Should Haves:
+1. Wishlist Functionality:
+  - Ability for authenticated users to save items to a wishlist for later purchase
+2. Advanced Search and Sorting Options:
+  - Combining filters and sorting (e.g., filtering by category and sorting by price or rating)
+3. User Reviews and Ratings:
+  - Allowing customers to submit and update reviews on products
+4. Enhanced User Experience (UX):
+  - Responsive design improvements and additional UX touches (e.g., subtle animations or enhanced product card layouts)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+Could Haves:
+1. Personalisation and Recommendations:
+  - Product recommendations based on browsing history or category
+  - Customisation options for user preferences (e.g., favorite brands or categories)
+2. Marketing and Engagement Features:
+  - Newsletter signup form
+  - Links to social media platforms such as Facebook Business pages
+  - Social media integration for sharing products or promotions
+3. Additional Content Features:
+  - Extra pages such as “FAQs” or blog articles related to technology and products
 
-A blue button should appear to click: _Make Public_,
+Will Not Have Now:
+1. Store Access Information:
+  - Detailed “About the Store” information is not included in the current user stories
+2. Advanced Promotional Features:
+  - Features such as dynamic discount systems, flash sales, or extensive analytics that are beyond core e-commerce functionality
 
-Another blue button should appear to click: _Open Browser_.
+## User Experience design
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Strategy design
 
-To log into the Heroku toolbelt CLI:
+#### User stories and epics
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
-### Connecting your Mongo database
-
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**June 18, 2024,** Add Mongo back into template
-
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+##### Epic: Viewing and Navigation:
+- [1.1](https://github.com/DanFNKD/PrimeTech/issues/1) - As a shopper, I can view a list of products so that I can easily browse and choose items to purchase.
+- [1.2](https://github.com/DanFNKD/PrimeTech/issues/2) - As a shopper, I can view a specific category of products so that I can quickly find items of interest without searching through all products.
+- [1.3](https://github.com/DanFNKD/PrimeTech/issues/3) - As a shopper, I can view individual product details so that I can make an informed decision about purchasing an item.
+- [1.4](https://github.com/DanFNKD/PrimeTech/issues/4) - As a shopper, I can identify deals, clearance items, and special offers so that I can take advantage of discounts.
+- [1.5](https://github.com/DanFNKD/PrimeTech/issues/5) - As a shopper, I can view the total of my purchases at any time so that I can stay within my budget.
+- [1.6](https://github.com/DanFNKD/PrimeTech/issues/6) - As a shopper, I can find details about the store so that I can learn about their values and policies.
+- [1.7](https://github.com/DanFNKD/PrimeTech/issues/7) - As a shopper, I can find answers to questions so that I can make informed decisions before purchasing.
+##### Epic: Registration and User Accounts:
+- [2.1](https://github.com/DanFNKD/PrimeTech/issues/8) - As a site user, I can easily register for an account so that I can access personalised features like saved addresses and order history.
+- [2.2](https://github.com/DanFNKD/PrimeTech/issues/16) - As a site user, I can easily login or logout so that I can manage my account securely.
+- [2.3](https://github.com/DanFNKD/PrimeTech/issues/9) - As a site user, I can access my personalised profile so that I can view order history and save payment details.
+##### Epic: Sorting and Searching:
+- [3.1](https://github.com/DanFNKD/PrimeTech/issues/10) - As a shopper, I can search for products by name or description so that I can find items quickly.
+- [3.2](https://github.com/DanFNKD/PrimeTech/issues/11) - As a shopper, I can sort products so that I can prioritise my preferences like best price or rating.
+##### Epic: Shopping Cart Management:
+- [4.1](https://github.com/DanFNKD/PrimeTech/issues/12) - As a shopper, I can add, remove, and adjust quantities in my shopping cart so that I can finalise my purchase.
+##### Epic: Wishlist Management:
+- [5.1](https://github.com/DanFNKD/PrimeTech/issues/13) - As a shopper, I can save items to a wishlist so that I can decide whether to purchase them later.
+##### Epic: Email Communication:
+- [6.1](https://github.com/DanFNKD/PrimeTech/issues/14) - As a shopper, I receive order confirmation emails so that I know my purchase was successful.
+##### Epic: Admin Panel Functionality:
+- [7.1](https://github.com/DanFNKD/PrimeTech/issues/15) - As an admin, I can add, update, and remove products so that the catalog remains up to date.
