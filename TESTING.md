@@ -189,3 +189,57 @@
 
 ## Code validation
 
+### HTML
+
+#### Index page
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-index.png)
+
+#### Signup
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-signup.png)
+
+#### Login
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-login.png)
+
+#### Logout
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-logout.png)
+
+#### Profile
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-profile.png)
+
+#### Bag
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-bag.png)
+
+#### Products
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-products.png)
+
+#### Product detail
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-productdetail.png)
+
+#### Add products
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-productsadd.png)
+
+#### Edit products
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-productsedit.png)
+
+#### Wishlist
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-wishlist.png)
+
+#### About
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-about.png)
+
+#### FAQ
+
+![Product detail](/documentation/media/images/testing/validator/htmlvalidator-faq.png)
+
