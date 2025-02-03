@@ -2,14 +2,13 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
+from django.core.mail import send_mail
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
-
 import stripe
 import json
 
@@ -139,7 +138,21 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-    messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.email}.')
+    subject = f"Order Confirmation - {order.order_number}"
+    message = (
+        f"Thank you for your order!\n\n"
+        f"Your order number is {order.order_number}.\n"
+        f"A confirmation email has been sent to {order.email}.\n\n"
+        f"Thank you for shopping with us at PrimeTech!"
+    )
+    send_mail(
+        subject,
+        message,
+        settings.DEFAULT_FROM_EMAIL,
+        [order.email],
+        fail_silently=False,
+    )
+    messages.success(request, f'Order successfully processed! Your order number is {order.order_number}. A confirmation email has been sent to {order.email}.')
     if 'bag' in request.session:
         del request.session['bag']
     template = 'checkout/checkout_success.html'
