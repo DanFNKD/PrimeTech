@@ -46,6 +46,11 @@ body {
     background: black;
     color: white;
 }
+.btn-black,
+.btn-black a {
+    color: white !important;
+    text-decoration: none;
+}
 .btn-outline-black {
     background: white;
     color: black !important;
