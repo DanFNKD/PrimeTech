@@ -3,6 +3,7 @@ from profiles.models import UserProfile
 from django.contrib.auth.models import User
 from django.db.models import Avg
 from django.utils.timezone import now
+from django.urls import reverse
 
 
 class Category(models.Model):
