@@ -48,29 +48,34 @@ body {
 }
 .btn-black,
 .btn-black a {
+    background: black;
     color: white !important;
     text-decoration: none;
 }
+
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus,
+.btn-black a:hover,
+.btn-black a:active,
+.btn-black a:focus {
+    background: #222;
+    color: white !important;
+}
+
 .btn-outline-black {
     background: white;
     color: black !important;
     border: 1px solid black;
 }
+
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
     background: black;
     color: white !important;
 }
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
-}
+
 .text-black {
     color: #000 !important;
 }
