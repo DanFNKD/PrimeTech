@@ -10,7 +10,7 @@ class FAQ(models.Model):
 
     def get_absolute_url(self):
         """Returns the absolute URL for each FAQ"""
-        return reverse("faq", args=[str(self.id)])
+        return reverse("faq-detail", args=[str(self.id)])
 
     def __str__(self):
         return self.question
