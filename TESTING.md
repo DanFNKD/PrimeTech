@@ -243,3 +243,7 @@
 
 ![Product detail](/documentation/media/images/testing/validator/htmlvalidator-faq.png)
 
+### CSS
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fprimetechfnkd-382d679752d9.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
