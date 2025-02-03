@@ -32,3 +32,160 @@
 #### Epic: Admin panel functionality
 - 7.1 - I know "as an admin, I can add, update and remove products so that the catalogue remains up to date" when I can navigate to the admin panel and add new products, update existing ones and remove ones that are no longer available. - PASS
 
+## Manual feature testing
+
+**All pages**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Navigation bar | Responsive | Test on various devices | Collapses on smaller screens | Pass |
+| Logo | Leads to Index page when clicked on | Click on the logo | Leads to index page | Pass |
+| Navbar links | Lead to relevant pages | Click on the links | Correct pages open | Pass |
+| Search bar | Displays search queries | Input query into the form | Shows results for a given query | Pass |
+| Basket total | Correct basket total displays | Add Products to basket | Correct basket total displays | Pass |
+| All products dropdown | Shows filters | Click on the dropdown | Displays products sorted/filtered as requested | Pass |
+| Entertainment dropdown | Displays products for a relevant category | Click on the dropdown links | Displays products for the relevant category | Pass |
+| Free delivery banner | Shows a correct free delivery threshold | Open all pages | Free Delivery Threshold displayed | Pass |
+| Footer | Displayed on all pages | Open all pages | Footer appears | Pass |
+
+**Index Page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Background | Displays on load | Go to the index page | Appears | Pass |
+| Mission statement | Displays on load | Go to the index page | Text appears | Pass |
+
+**All products page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Product cards | Displays product image | Open the all products Page | Images appear | Pass |
+| Product cards | Display product title and price | Open the all products Page | titles and prices appear | Pass |
+| Product image | Clicking on the image opens a product detail page | Click on the image | Correct product detail page opens | Pass |
+| Admin buttons | Appear to the superuser | Log in as superuser | Edit and delete buttons appear | Pass |
+| Edit button | Opens a product edit page | Click on the button | Edit product page opens for the correct product | Pass |
+| Delete button | Deletes a product | Click on the button | Product deleted | Pass |
+| Dropdown | Sort products | Select different sorting options | Products sorted correctly | Pass |
+| Category page | Appears when clicked on a category name | Click a category name on a product card | Correct product(s) appear | Pass |
+| Product count | Shows the amount of products within the category | Click a category name on a product card | Correct number of products appears | Pass |
+| Product query | Shows relevant products | Type a query into the search bar | Correct products appear | Pass |
+| Back to the top button | Takes user back to the top of the page | Click on the button | Works as expected | Pass |
+
+**Product detail page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Product detail page | Displays correct product information | Go to the product detail page for any product | Correct information displayed | Pass |
+| Add to basket button | Adds product to basket | Click on the button | Product added | Pass |
+| Quantity selector | Select quantity | Add to basket | Correct quantity added | Pass |
+| Add to basket button | Min value is 1, max value is 99 | Try to add less than 1 or more than 99 products | Impossible to add | Pass |
+| Add to wishlist icon | Adds or removes from wishlist | Click on the icon | Works as expected | Pass |
+| Edit button | Opens a product edit page | Click on the button | Edit product page opens for the correct product | Pass |
+| Delete button | Deletes a product | Click on the button | Product deleted | Pass |
+
+**Add product page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Product form | Loads all the fields | Go to the product management page | Works as expected | Pass |
+| Image field | Image title appears | Add image | Works as expected | Pass |
+| Product form | Adds a new product | Fill out the form and click submit | New product added | Pass |
+
+**Edit product page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Product form | Fields prepopulated with existing information | Go to the edit product page | Works as expected | Pass |
+| Image field | Current image displayed | Go to the product page | Works as expected | Pass |
+| Product form | Updates the product | Fill out the form and click submit | Product updated | Pass |
+
+**Bag page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Table | Display product image, title, price, quantity and subtotal | Add product to basket | Works as expected | Pass |
+| Quantity selector | Updates product quantity | Change quantity and click update | Works as expected | Pass |
+| Quantity selector | Min value is 1, max value is 99 | Try to add less than 1 or more than 99 products | Impossible to add | Pass |
+| Remove link | Removes product from basket | Click on | Works as expected | Pass |
+| Prices | Subtotal, basket Total, Delivery and Grand Total show the correct amount | Add products to basket | Works as expected | Pass |
+| Secure Checkout button | Opens the checkout page | Click on the button | Works as expected | Pass |
+
+**Checkout page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Order summary | Displays correct details | Add products to basket and go to checkout | Works as expected | Pass |
+| Delivery info | Loads correct fields | Go to checkout | Works as expected | Pass |
+| Save delivery info | Saves delivery info | Check the checkbox and go to the profile | Works as expected | Pass |
+| Stripe payment | Make a payment | Input stripe testing card details | Works as expected | Pass |
+| Loading spinner overlay | Appears when payment is being processed | Click complete order | Works as expected | Pass |
+
+**Checkout success page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Checkout success page | Appears when an order is successfully placed | Place an order | Works as expected | Pass |
+| Email | Displays the correct user email | Place an order | Works as expected | Pass |
+| Order number | Displays an order number | Place an order | Works as expected | Pass |
+
+**Profile page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Default delivery information form | Displays correct fields | Go to the profile page | Works as expected | Pass |
+| Default delivery information form | Shows saved delivery info | Save delivery info and go to the profile page | Works as expected | Pass |
+| Default delivery information form | Updates default delivery info | Click update information | Works as expected | Pass |
+| Order history | Shows previous orders' details | Place orders and go to the profile page | Works as expected | Pass |
+| Order number | Displays past order confirmation when clicked on | Click on the order number | Works as expected | Pass |
+
+**Wishlist page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Wishlist page | Displays products added to wishlist by the user | Add products to wishlist | Works as expected | Pass |
+| Add to wishlist button | Changes icon | Click the button | Works as expected | Pass |
+| Remove from wishlist button | Changes icon | Click the button | Works as expected | Pass |
+
+**Register page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Register form | Displays correct fields | Go to the register page | Works as expected | Pass |
+| Back to login button | Redirects to the login page | Click on the button | Works as expected | Pass |
+| Sign in link | Redirects to the login page | Click on the link | Works as expected | Pass |
+| Confirmation email | Received when a new account is created | Create a new account | Works as expected | Pass |
+
+**Login page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Login form | Displays correct fields | Go to the Login page | Works as expected | Pass |
+| Sign up link | Redirects to the register page | Click on the link | Works as expected | Pass |
+| Home button | Redirects to the index page | Click on the button | Works as expected | Pass |
+| Forgot password link | Redirects to the forgot password page | Click on the link | Works as expected | Pass |
+| Sign in button | Logs the user in | Click on the button | Works as expected | Pass |
+
+**Logout page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Cancel button | Redirects to the index page | Click on the button | Works as expected | Pass |
+| Logout button | Logs the user out | Click on the button | Works as expected | Pass |
+
+**Forgotten password page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Forgot password form | Displays the email field | Go to the forgot password | Works as expected | Pass |
+| Back to login button | Redirects to the Log in page | Click on the button | Works as expected | Pass |
+| Reset password button | Send a reset password email | Click on the button | Works as expected | Pass |
+
+**Error page**
+
+| **Feature** | **Expected outcome** | **Testing performed** | **result** | **Pass/fail** |
+| --- | --- | --- | --- | --- |
+| Custom error Page | Displays a correct error number | Manually trigger error | Works as expected | Pass |
+| Go Home button | Redirects to the index page | Click on the button | Works as expected | Pass |
+
+## Code validation
+
