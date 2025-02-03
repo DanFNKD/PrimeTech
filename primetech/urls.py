@@ -7,8 +7,8 @@ from home.views import robots_txt, custom_404
 from .sitemaps import ProductSitemap, FAQSitemap
 
 sitemaps = {
-    'products': ProductSitemap,
-    'faq': FAQSitemap,
+    'products': ProductSitemap(),
+    'faq': FAQSitemap(),
 }
 
 urlpatterns = [
