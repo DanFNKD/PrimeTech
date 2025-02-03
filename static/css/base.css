@@ -249,6 +249,7 @@ footer.bg-dark.text-white {
     border-color: #dc3545;
     border-radius: 0;
 }
+
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;

@@ -143,6 +143,11 @@ Whilst testing, I noticed that nothing was appearing in my TVs category. This wa
 #### Order Total
 ![Image](/documentation/media/images/bug-ordertotal1)
 ![Image](/documentation/media/images/bug-ordertotal2)
+![Image](/documentation/media/images/bug-ordertotal3)
+![Image](/documentation/media/images/bug-ordertotal4)
+![Image](/documentation/media/images/bug-ordertotal5)
+
+Whilst testing, I noticed that the order total wasn't pulling through to the django admin or the profile order history. The model was updated and the issue was resolved.
 
 #### Images
 ![Image](/documentation/media/images/bug-image1)

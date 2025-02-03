@@ -19,7 +19,7 @@ Disallow: /profile/
 Allow: /products/
 Allow: /faq/
 Allow: /blog/
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://primetechfnkd-382d679752d9.herokuapp.com/sitemap.xml
 """
     return HttpResponse(content, content_type="text/plain")
 
