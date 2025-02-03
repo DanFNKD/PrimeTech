@@ -268,12 +268,12 @@ footer.bg-dark.text-white {
         left: 0;
         z-index: 1030;
     }
-    .header-container {
+    .container {
         padding-top: 164px;
     }
 }
 @media (max-width: 991px) {
-    .header-container {
+    .container {
         padding-top: 116px;
     }
     body {
