@@ -88,4 +88,4 @@ Will Not Have Now:
 ##### Epic: Email Communication:
 - [6.1](https://github.com/DanFNKD/PrimeTech/issues/14) - As a shopper, I receive order confirmation emails so that I know my purchase was successful.
 ##### Epic: Admin Panel Functionality:
-- [7.1](https://github.com/DanFNKD/PrimeTech/issues/15) - As an admin, I can add, update, and remove products so that the catalog remains up to date.
+- [7.1](https://github.com/DanFNKD/PrimeTech/issues/15) - As an admin, I can add, update, and remove products so that the catalogue remains up to date.
