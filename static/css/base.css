@@ -97,7 +97,9 @@ body {
 .content-wrapper {
     flex: 1;
     padding-top: 164px;
+    padding-bottom: 50px;
 }
+
 @media (max-width: 991px) {
     .content-wrapper {
         padding-top: 116px;

@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
-
 def index(request):
     """ A view to return the index page """
     return render(request, 'home/index.html')
+
+def about(request):
+    """ A view to return the about page """
+    return render(request, 'about.html')
 
 def robots_txt(request):
     """ A view to return the robots.txt file """
