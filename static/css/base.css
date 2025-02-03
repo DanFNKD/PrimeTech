@@ -268,13 +268,13 @@ footer.bg-dark.text-white {
         left: 0;
         z-index: 1030;
     }
-    .container {
-        padding-top: 164px;
+    .container .content-wrapper {
+        padding-top: 164px !important;
     }
 }
 @media (max-width: 991px) {
-    .container {
-        padding-top: 116px;
+    .container .content-wrapper {
+        padding-top: 116px !important;
     }
     body {
         height: 100%;
