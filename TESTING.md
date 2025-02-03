@@ -193,55 +193,55 @@
 
 #### Index page
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-index.png)
+![Product detail](/documentation/media/testing/htmlvalidator-index.png)
 
 #### Signup
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-signup.png)
+![Product detail](/documentation/media/testing/htmlvalidator-signup.png)
 
 #### Login
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-login.png)
+![Product detail](/documentation/media/testing/htmlvalidator-login.png)
 
 #### Logout
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-logout.png)
+![Product detail](/documentation/media/testing/htmlvalidator-logout.png)
 
 #### Profile
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-profile.png)
+![Product detail](/documentation/media/testing/htmlvalidator-profile.png)
 
 #### Bag
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-bag.png)
+![Product detail](/documentation/media/testing/htmlvalidator-bag.png)
 
 #### Products
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-products.png)
+![Product detail](/documentation/media/testing/htmlvalidator-products.png)
 
 #### Product detail
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-productdetail.png)
+![Product detail](/documentation/media/testing/htmlvalidator-productdetail.png)
 
 #### Add products
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-productsadd.png)
+![Product detail](/documentation/media/testing/htmlvalidator-productsadd.png)
 
 #### Edit products
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-productsedit.png)
+![Product detail](/documentation/media/testing/htmlvalidator-productsedit.png)
 
 #### Wishlist
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-wishlist.png)
+![Product detail](/documentation/media/testing/htmlvalidator-wishlist.png)
 
 #### About
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-about.png)
+![Product detail](/documentation/media/testing/htmlvalidator-about.png)
 
 #### FAQ
 
-![Product detail](/documentation/media/testing/validator/htmlvalidator-faq.png)
+![Product detail](/documentation/media/testing/htmlvalidator-faq.png)
 
 ### CSS
 
@@ -276,8 +276,8 @@ https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fprimetechfnkd-38
 #### Checkout - Views
 ![Checkout Views](/documentation/media/testing/plinter-checkoutviews.png)
 
-#### Checkout - Webhook Handlers
-![Checkout Webhook Handlers](/documentation/media/testing/plinter-checkoutwebhookhandlers.png)
+#### Checkout - Webhook Handler
+![Checkout Webhook Handlers](/documentation/media/testing/plinter-checkoutwebhookhandler.png)
 
 #### Checkout - Webhooks
 ![Checkout Webhooks](/documentation/media/testing/plinter-checkoutwebhooks.png)
