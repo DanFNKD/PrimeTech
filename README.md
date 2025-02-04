@@ -119,13 +119,37 @@ New users create an account by filling in a simple registration form. There is v
 ![Image](/documentation/media/images/features-signup)
 ![Image](/documentation/media/images/features-signupvalidation)
 
+#### Sign in
+Users can sign in using their verified credentials.
+
 #### Sign out
-Users can securely log out from the dropdown menu
+Users can securely log out from the dropdown menu.
 
+### Authenticated user specific
 
+#### Products edit and delete
+Authenticated users can edit and delete existing products.
+![Image](/documentation/media/images/features-loggedinuseredit)
+![Image](/documentation/media/images/features-loggedinusereditdelete)
+
+#### Reviews
+Authenticated users can leave reviews on product pages.
+
+#### Wishlist
+Authenticated users can access a wishlist page that is stored on their account.
+![Image](/documentation/media/images/features-wishlist)
+
+#### Profile
+Authenticated users can save their profile details, as well as view historic orders on site.
+![Image](/documentation/media/images/features-profile)
+
+### Other pages
+
+#### 404 error page
+Users will see an error page if they attempt to access a page that doesn't exist.
+![Image](/documentation/media/images/features-404)
 
 ## User Experience design
-
 
 ### Strategy design
 
