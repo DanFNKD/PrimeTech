@@ -296,7 +296,7 @@ s
 
 ## Testing
 
-Detailed testing can be found [at](TESTING.md)
+Detailed testing can be found [here.](TESTING.md)
 
 ## Bugs
 
