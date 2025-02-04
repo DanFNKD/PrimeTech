@@ -5,8 +5,23 @@ Access the live site [here](https://primetechfnkd-382d679752d9.herokuapp.com/).
 ## Contents
 
 * [MoSCoW priotisation](#moscow-prioritisation)
+* [Features](#features)
+  * [Homepage](#homepage)
+  * [Products](#products)
+  * [Shopping bag and checkout](#shopping-bag-and-checkout)
+  * [Registration](#registration)
+  * [Authenticated user specific](#authenticated-user-specific)
+  * [Other pages](#other-pages)
 * [User Experience design](#user-experience-design)
-
+  * [Strategy design](#strategy-design)
+  * [Business Plan](#business-plan)
+  * [Wireframes](#wireframes)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Bugs](#bugs)
+* [Deployment](#deployment)
+* [Credits](#credits)
+* [Acknowledgements](#acknowledgements)
 
 ## MoSCoW prioritistation and Kanban board
 
@@ -63,50 +78,61 @@ Will Not Have Now:
 ## Features
 
 ### Homepage
+
 The homepage is scaled back, prompting users to explore other pages to learn more about the site.
 ![Image](/documentation/media/images/features-home.png)
 
 ### Products
 
 #### All products
+
 Users can browse the product catalogue, displayed in a grid layout with images and ratings.
 ![Image](/documentation/media/images/features-allproducts.png)
 
 #### Product category
+
 Users can search for products dependant on it's category.
 ![Image](/documentation/media/images/features-category.png)
 
 #### Product sorting
+
 Users can sort products on price, rating, name or category.
 ![Image](/documentation/media/images/features-allproductssort.png)
 
 #### Product detail
+
 The product detail page provides a comprehensive view of each item, including an image, description, price and rating.
 ![Image](/documentation/media/images/features-productdetail.png)
 
 #### Product reviews
+
 Users can view reviews from registered users to inform their purchases.
 ![Image](/documentation/media/images/features-addreview.png)
 
 #### Product search
+
 Search functionality allows users to find products based on keywords.
 ![Image](/documentation/media/images/features-search.png)
 
 ### Shopping bag and checkout
 
 #### Shopping bag
+
 The page allows users to review products before proceeding to checkout. Each item is displayed with its image, quantity selector and price. Users can update product quantities directly from the bag page, automatically updating the price.
 ![Image](/documentation/media/images/features-addtobag.png)
 
 #### Shopping bag checkout
+
 Users proceed with secure payment options to ensure a smooth transaction.
 ![Image](/documentation/media/images/features-checkout.png)
 
 #### Transaction completing
+
 Once payment is being processed, the user sees a temporary page before the order is completed.
 ![Image](/documentation/media/images/features-transactioncompleting.png)
 
 #### Order confirmation
+
 After checkout, users receive an order confirmation page summarising their purchase and an email.
 ![Image](/documentation/media/images/features-orderconfirmation.png)
 ![Image](/documentation/media/images/features-orderconfirmationemail.png)
@@ -114,49 +140,59 @@ After checkout, users receive an order confirmation page summarising their purch
 ### Registration
 
 #### Sign up
+
 New users create an account by filling in a simple registration form. There is validation and they receive an email once completed.
 
 ![Image](/documentation/media/images/features-signup.png)
 ![Image](/documentation/media/images/features-signupvalidation.png)
 
 #### Sign in
+
 Users can sign in using their verified credentials.
 ![Image](/documentation/media/images/features-login.png)
 
 #### Sign out
+
 Users can securely log out from the dropdown menu.
 ![Image](/documentation/media/images/features-logout.png)
 
 ### Authenticated user specific
 
 #### Products edit and delete
+
 Authenticated users can edit and delete existing products.
 ![Image](/documentation/media/images/features-loggedinuseredit.png)
 ![Image](/documentation/media/images/features-loggedinusereditdelete.png)
 
 #### Reviews
+
 Authenticated users can leave reviews on product pages.
 ![Image](/documentation/media/images/features-addreview.png)
 
 #### Wishlist
+
 Authenticated users can access a wishlist page that is stored on their account.
 ![Image](/documentation/media/images/features-wishlist.png)
 
 #### Profile
+
 Authenticated users can save their profile details, as well as view historic orders on site.
 ![Image](/documentation/media/images/features-profile.png)
 
 ### Other pages
 
 #### 404 error page
+
 Users will see an error page if they attempt to access a page that doesn't exist.
 ![Image](/documentation/media/images/features-404.png)
 
 #### Facebook Business page
+
 Users are encouraged to visit the accompanying Facebook Business page to learn more and connect with the business.
 ![Image](/documentation/media/images/features-facebook.png)
 
 #### MailChimp marketing
+
 Users are encouraged to sign up and subscribe to more updates from the site.
 ![Image](/documentation/media/images/features-mailchimp.png)
 ![Image](/documentation/media/images/features-mailchimp2.png)
@@ -194,7 +230,7 @@ Users are encouraged to sign up and subscribe to more updates from the site.
 ### Business Plan
 
 #### Mission Statement
-PrimeTech offers the best quality, cutting edge technology products. Our range consists of TV’s, radios, gaming consoles and accessories. We serve everyone, from tech enthusiasts to the person buying their very first product! 
+- PrimeTech offers the best quality, cutting edge technology products. Our range consists of TV’s, radios, gaming consoles and accessories. We serve everyone, from tech enthusiasts to the person buying their very first product! 
 
 #### Demographics
 - Age: 18 - 55.
@@ -230,7 +266,7 @@ PrimeTech offers the best quality, cutting edge technology products. Our range c
 
 ## Technologies Used
 
-### Languages
+### Languages
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
