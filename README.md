@@ -245,6 +245,8 @@ Whilst testing, I noticed that the order total wasn't pulling through to the dja
 ![Image](/documentation/media/images/bug-image1.png)
 ![Image](/documentation/media/images/bug-image2.png)
 
+Whilst testing, I noticed that images weren't corrected. I moved them into static to help this.
+
 ## Deployment
 
 ### Deploying to Heroku
