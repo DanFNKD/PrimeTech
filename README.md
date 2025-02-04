@@ -60,7 +60,72 @@ Will Not Have Now:
 2. Advanced Promotional Features:
   - Features such as dynamic discount systems, flash sales, or extensive analytics that are beyond core e-commerce functionality
 
+## Features
+
+### Homepage
+The homepage is scaled back, prompting users to explore other pages to learn more about the site.
+![Image](/documentation/media/images/features-home)
+
+### Products
+
+#### All products
+Users can browse the product catalogue, displayed in a grid layout with images and ratings.
+![Image](/documentation/media/images/features-allproducts)
+
+#### Product category
+Users can search for products dependant on it's category.
+![Image](/documentation/media/images/features-category)
+
+#### Product sorting
+Users can sort products on price, rating, name or category.
+![Image](/documentation/media/images/features-allproductssort)
+
+#### Product detail
+The product detail page provides a comprehensive view of each item, including an image, description, price and rating.
+![Image](/documentation/media/images/features-productdetail)
+
+#### Product reviews
+Users can view reviews from registered users to inform their purchases.
+![Image](/documentation/media/images/features-addreview)
+
+#### Product search
+Search functionality allows users to find products based on keywords.
+![Image](/documentation/media/images/features-search)
+
+### Shopping bag and checkout
+
+#### Shopping bag
+The page allows users to review products before proceeding to checkout. Each item is displayed with its image, quantity selector and price. Users can update product quantities directly from the bag page, automatically updating the price.
+![Image](/documentation/media/images/features-addtobag)
+
+#### Shopping bag checkout
+Users proceed with secure payment options to ensure a smooth transaction.
+![Image](/documentation/media/images/features-checkout)
+
+#### Transaction completing
+Once payment is being processed, the user sees a temporary page before the order is completed.
+![Image](/documentation/media/images/features-transactioncompleting)
+
+#### Order confirmation
+After checkout, users receive an order confirmation page summarising their purchase and an email.
+![Image](/documentation/media/images/features-orderconfirmation)
+![Image](/documentation/media/images/features-orderconfirmationemail)
+
+### Registration
+
+#### Sign up
+New users create an account by filling in a simple registration form. There is validation and they receive an email once completed.
+
+![Image](/documentation/media/images/features-signup)
+![Image](/documentation/media/images/features-signupvalidation)
+
+#### Sign out
+Users can securely log out from the dropdown menu
+
+
+
 ## User Experience design
+
 
 ### Strategy design
 
