@@ -152,6 +152,15 @@ Authenticated users can save their profile details, as well as view historic ord
 Users will see an error page if they attempt to access a page that doesn't exist.
 ![Image](/documentation/media/images/features-404.png)
 
+#### Facebook Business page
+Users are encouraged to visit the accompanying Facebook Business page to learn more and connect with the business.
+![Image](/documentation/media/images/features-facebook.png)
+
+#### MailChimp marketing
+Users are encouraged to sign up and subscribe to more updates from the site.
+![Image](/documentation/media/images/features-mailchimp.png)
+![Image](/documentation/media/images/features-mailchimp2.png)
+
 ## User Experience design
 
 ### Strategy design
@@ -181,6 +190,35 @@ Users will see an error page if they attempt to access a page that doesn't exist
 - [6.1](https://github.com/DanFNKD/PrimeTech/issues/14) - As a shopper, I receive order confirmation emails so that I know my purchase was successful.
 ##### Epic: Admin Panel Functionality:
 - [7.1](https://github.com/DanFNKD/PrimeTech/issues/15) - As an admin, I can add, update, and remove products so that the catalogue remains up to date.
+
+### Business Plan
+
+#### Mission Statement
+PrimeTech offers the best quality, cutting edge technology products. Our range consists of TV’s, radios, gaming consoles and accessories. We serve everyone, from tech enthusiasts to the person buying their very first product! 
+
+#### Demographics
+- Age: 18 - 55.
+
+#### USP’s
+- Competitive pricing.
+- Fast shipping and hassle free returns.
+- Simple layout, ensuring anyone can understand the best product for them.
+
+#### Growth strategy
+- Expand product offerings to include more specific products e..g VR products. This will help to improve SEO and generate more traction.
+- Leverage data and analytics to personalise recommendations for customers.
+- Plan the site around the future launch of a mobile App.
+- Sustainability strategies such as recycling programs and partnering with ethical manufacturers.
+
+#### Key partners
+- Suppliers - Leading manufactures, newer entrants to expand product base.
+- Delivery partners - Reliable shipping is crucial to customer satisfaction.
+- Internal team - Support and after sales service key to repeat custom and build a strong reputation.
+
+#### Marketing strategies
+- Use newsletter providers (such as MailChimp) to increase audience and keep customers up to date.
+- Utilise social media (such as Facebook) to promote the brand and engage existing customers.
+- Expand social media presence to cover more channels.
 
 ### Wireframes
 
@@ -217,6 +255,8 @@ s
 -   [psycopg2](https://pypi.org/project/psycopg2/) database adapter used to support the connection to the postgres db.
 -   [Heroku](https://www.heroku.com) - used to host the deployed application.
 -   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
+-   [Facebook:](https://www.facebook.com/) was used to create a Facebook business page.
+-   [MailChimp:](https://mailchimp.com/?currency=EUR) was used for the purpose of digital marketing.
 
 ## Testing
 
