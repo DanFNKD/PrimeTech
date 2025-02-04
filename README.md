@@ -64,90 +64,93 @@ Will Not Have Now:
 
 ### Homepage
 The homepage is scaled back, prompting users to explore other pages to learn more about the site.
-![Image](/documentation/media/images/features-home)
+![Image](/documentation/media/images/features-home.png)
 
 ### Products
 
 #### All products
 Users can browse the product catalogue, displayed in a grid layout with images and ratings.
-![Image](/documentation/media/images/features-allproducts)
+![Image](/documentation/media/images/features-allproducts.png)
 
 #### Product category
 Users can search for products dependant on it's category.
-![Image](/documentation/media/images/features-category)
+![Image](/documentation/media/images/features-category.png)
 
 #### Product sorting
 Users can sort products on price, rating, name or category.
-![Image](/documentation/media/images/features-allproductssort)
+![Image](/documentation/media/images/features-allproductssort.png)
 
 #### Product detail
 The product detail page provides a comprehensive view of each item, including an image, description, price and rating.
-![Image](/documentation/media/images/features-productdetail)
+![Image](/documentation/media/images/features-productdetail.png)
 
 #### Product reviews
 Users can view reviews from registered users to inform their purchases.
-![Image](/documentation/media/images/features-addreview)
+![Image](/documentation/media/images/features-addreview.png)
 
 #### Product search
 Search functionality allows users to find products based on keywords.
-![Image](/documentation/media/images/features-search)
+![Image](/documentation/media/images/features-search.png)
 
 ### Shopping bag and checkout
 
 #### Shopping bag
 The page allows users to review products before proceeding to checkout. Each item is displayed with its image, quantity selector and price. Users can update product quantities directly from the bag page, automatically updating the price.
-![Image](/documentation/media/images/features-addtobag)
+![Image](/documentation/media/images/features-addtobag.png)
 
 #### Shopping bag checkout
 Users proceed with secure payment options to ensure a smooth transaction.
-![Image](/documentation/media/images/features-checkout)
+![Image](/documentation/media/images/features-checkout.png)
 
 #### Transaction completing
 Once payment is being processed, the user sees a temporary page before the order is completed.
-![Image](/documentation/media/images/features-transactioncompleting)
+![Image](/documentation/media/images/features-transactioncompleting.png)
 
 #### Order confirmation
 After checkout, users receive an order confirmation page summarising their purchase and an email.
-![Image](/documentation/media/images/features-orderconfirmation)
-![Image](/documentation/media/images/features-orderconfirmationemail)
+![Image](/documentation/media/images/features-orderconfirmation.png)
+![Image](/documentation/media/images/features-orderconfirmationemail.png)
 
 ### Registration
 
 #### Sign up
 New users create an account by filling in a simple registration form. There is validation and they receive an email once completed.
 
-![Image](/documentation/media/images/features-signup)
-![Image](/documentation/media/images/features-signupvalidation)
+![Image](/documentation/media/images/features-signup.png)
+![Image](/documentation/media/images/features-signupvalidation.png)
 
 #### Sign in
 Users can sign in using their verified credentials.
+![Image](/documentation/media/images/features-login.png)
 
 #### Sign out
 Users can securely log out from the dropdown menu.
+![Image](/documentation/media/images/features-logout.png)
 
 ### Authenticated user specific
 
 #### Products edit and delete
 Authenticated users can edit and delete existing products.
-![Image](/documentation/media/images/features-loggedinuseredit)
-![Image](/documentation/media/images/features-loggedinusereditdelete)
+![Image](/documentation/media/images/features-loggedinuseredit.png)
+![Image](/documentation/media/images/features-loggedinusereditdelete.png)
 
 #### Reviews
 Authenticated users can leave reviews on product pages.
+![Image](/documentation/media/images/features-addreview.png)
 
 #### Wishlist
 Authenticated users can access a wishlist page that is stored on their account.
-![Image](/documentation/media/images/features-wishlist)
+![Image](/documentation/media/images/features-wishlist.png)
 
 #### Profile
 Authenticated users can save their profile details, as well as view historic orders on site.
-![Image](/documentation/media/images/features-profile)
+![Image](/documentation/media/images/features-profile.png)
 
 ### Other pages
 
 #### 404 error page
 Users will see an error page if they attempt to access a page that doesn't exist.
-![Image](/documentation/media/images/features-404)
+![Image](/documentation/media/images/features-404.png)
 
 ## User Experience design
 
@@ -222,25 +225,25 @@ Detailed testing can be found at (TESTING.md)
 ## Bugs
 
 #### TV Category
-![Image](/documentation/media/images/bug-category1)
-![Image](/documentation/media/images/bug-category2)
-![Image](/documentation/media/images/bug-category3)
-![Image](/documentation/media/images/bug-category4)
+![Image](/documentation/media/images/bug-category1.png)
+![Image](/documentation/media/images/bug-category2.png)
+![Image](/documentation/media/images/bug-category3.png)
+![Image](/documentation/media/images/bug-category4.png)
 
 Whilst testing, I noticed that nothing was appearing in my TVs category. This was because of a labelling error and was resolved by updating the Category from TVs to TV.
 
 #### Order Total
-![Image](/documentation/media/images/bug-ordertotal1)
-![Image](/documentation/media/images/bug-ordertotal2)
-![Image](/documentation/media/images/bug-ordertotal3)
-![Image](/documentation/media/images/bug-ordertotal4)
-![Image](/documentation/media/images/bug-ordertotal5)
+![Image](/documentation/media/images/bug-ordertotal1.png)
+![Image](/documentation/media/images/bug-ordertotal2.png)
+![Image](/documentation/media/images/bug-ordertotal3.png)
+![Image](/documentation/media/images/bug-ordertotal4.png)
+![Image](/documentation/media/images/bug-ordertotal5.png)
 
 Whilst testing, I noticed that the order total wasn't pulling through to the django admin or the profile order history. The model was updated and the issue was resolved.
 
 #### Images
-![Image](/documentation/media/images/bug-image1)
-![Image](/documentation/media/images/bug-image2)
+![Image](/documentation/media/images/bug-image1.png)
+![Image](/documentation/media/images/bug-image2.png)
 
 ## Deployment
 
