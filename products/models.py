@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 from profiles.models import UserProfile
 from django.contrib.auth.models import User
 from django.db.models import Avg
@@ -25,22 +26,26 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2,
+        validators=[MinValueValidator(0)]
+    )
+    rating = models.DecimalField(
+        max_digits=3, decimal_places=1, null=True, blank=True,
+        validators=[MinValueValidator(0), MaxValueValidator(5)]
+    )
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        """Returns the absolute URL for each product"""
         return reverse("product_detail", args=[str(self.id)])
 
     def __str__(self):
         return self.name
 
     def update_rating(self):
-        """ Update the product's average rating based on reviews """
         avg_rating = self.reviews.aggregate(Avg('rating'))['rating__avg']
         self.rating = round(avg_rating, 1) if avg_rating else None
         self.save()
@@ -70,7 +75,7 @@ class WishlistItem(models.Model):
 class Review(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='reviews')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rating = models.PositiveIntegerField(choices=[(i, str(i)) for i in range(1, 6)]) 
+    rating = models.PositiveIntegerField(choices=[(i, str(i)) for i in range(1, 6)])
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -80,6 +85,5 @@ class Review(models.Model):
         return f"{self.user.username} rated {self.product.name} {self.rating}★"
 
     def save(self, *args, **kwargs):
-        """ Override save method to update product rating after saving a review """
         super().save(*args, **kwargs)
         self.product.update_rating()
