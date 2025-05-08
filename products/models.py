@@ -35,7 +35,6 @@ class Product(models.Model):
         validators=[MinValueValidator(0), MaxValueValidator(5)]
     )
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(upload_to='products/', null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
