@@ -63,16 +63,12 @@ def product_detail(request, product_id):
     """ A view to show individual product details and reviews """
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product).order_by('-created_at')
-
-    avg_rating = reviews.filter(
-        rating__gte=1, rating__lte=5
-    ).aggregate(Avg('rating'))['rating__avg']
-    avg_rating = round(avg_rating) if avg_rating else 0
+    review_count = reviews.count()
 
     context = {
         'product': product,
         'reviews': reviews,
-        'avg_rating': avg_rating,
+        'review_count': review_count,
         'review_form': ReviewForm(),
     }
 
@@ -88,8 +84,13 @@ def submit_review(request, product_id):
         if form.is_valid():
             review, created = Review.objects.update_or_create(
                 product=product, user=request.user,
-                defaults={'rating': form.cleaned_data['rating']}
+                defaults={
+                    'rating': form.cleaned_data['rating'],
+                    'comment': form.cleaned_data['comment'],
+                }
             )
+            product.update_rating()
+           
             if created:
                 messages.success(request, "Your rating has been submitted.")
             else:

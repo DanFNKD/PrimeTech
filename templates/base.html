@@ -122,6 +122,18 @@
     <div class="content-wrapper container mt-3">
       {% block content %}{% endblock %}
     </div>
+    <!-- Toast Messages -->
+    {% if messages %}
+      <div aria-live="polite" aria-atomic="true" style="position: fixed; top: 80px; right: 20px; z-index: 1051;">
+        {% for message in messages %}
+          <div class="toast bg-{{ message.tags }} text-white" role="alert" data-delay="3000" data-autohide="true">
+            <div class="toast-body">
+              {{ message }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
     <!-- Footer -->
     {% include 'includes/footer.html' %}
     {% block postloadjs %}

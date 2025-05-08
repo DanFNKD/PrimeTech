@@ -35,13 +35,15 @@
           </a>
         </p>
         {% endif %}
-        {% if avg_rating %}
-        <small class="text-muted">
-          {% for _ in "12345"|slice:avg_rating|floatformat:0 %}
+        {% if product.rating %}
+        <span class="text-muted">
+          {% for _ in "12345"|slice:product.rating|floatformat:0 %}
           <i class="fas fa-star text-warning"></i>
           {% endfor %}
-          ({{ avg_rating|floatformat:1 }} / 5)
-        </small>
+          <span class="text-muted ml-2">
+            ({{ product.rating|floatformat:1 }} / 5.0{% if review_count %}, {{ review_count }} review{{ review_count|pluralize }}{% endif %})
+          </span>
+        </span>
         {% else %}
         <small class="text-muted">No Rating</small>
         {% endif %}
@@ -124,17 +126,10 @@
       <h4>Submit a Review</h4>
       <form method="POST" action="{% url 'submit_review' product.id %}">
         {% csrf_token %}
-        <div class="form-group">
-          <label for="id_rating">Select Rating</label>
-          <select class="form-control w-25" name="rating" id="id_rating" required>
-            <option value="1">1*</option>
-            <option value="2">2*</option>
-            <option value="3">3*</option>
-            <option value="4">4*</option>
-            <option value="5">5*</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-black custom-btn-size text-uppercase">Submit Rating</button>
+        {{ review_form|crispy }}
+        <button type="submit" class="btn btn-black custom-btn-size text-uppercase">
+          Submit Review
+        </button>
       </form>
     </div>
   </div>
