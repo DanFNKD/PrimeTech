@@ -4,14 +4,15 @@
       <div class="col-12 text-center mb-3">
         <h5>Stay Updated</h5>
         <p>Subscribe to our newsletter for the latest updates and deals!</p>
-        <form id="newsletter-form">
+        <form method="POST" action="{% url 'subscribe' %}" class="form-inline mt-3">
+          {% csrf_token %}
           <div class="input-group w-50 mx-auto">
-            <input type="email" id="newsletter-email" class="form-control" placeholder="Enter your email" required>
+            <input type="email" name="email" id="newsletter-email"
+                   class="form-control" placeholder="Enter your email" required>
             <div class="input-group-append">
               <button type="submit" class="btn btn-primary">Subscribe</button>
             </div>
           </div>
-          <small id="newsletter-message" class="form-text"></small>
         </form>
       </div>
       <div class="col-12 text-center">
