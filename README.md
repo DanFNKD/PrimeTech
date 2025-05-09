@@ -17,6 +17,7 @@ Access the live site [here](https://primetechfnkd-382d679752d9.herokuapp.com/).
   * [Business Plan](#business-plan)
   * [Wireframes](#wireframes)
   * [ERD](#entity-relationship-diagram)
+  * [Design choices](#design-choices)
 * [Technologies Used](#technologies-used)
 * [Testing](#testing)
 * [Bugs](#bugs)
@@ -269,6 +270,24 @@ Users are encouraged to sign up and subscribe to more updates from the site.
 ### Entity Relationship Diagram
 
 ![ERD](/documentation/media/images/ux-erd.png)
+
+### Design choices
+
+#### Colour scheme
+
+The PrimeTech site uses a modern, bright colour palette that emphasises contrast and readability:
+
+- **Primary:** - '#000000' (Black)
+- **Secondary:** - '#ffffff' (White)
+- **Accent Elements:** - '#f8f9fa' (Grey)
+- **Success:** - '#28a745' (Green)
+- **Brand Highlight:** - '#ffd700' (Gold)(used in delivery banner, links and buttons)
+
+#### Typography
+
+The site uses clean, modern typography to further reinforce readability:
+
+- **Base font:** - 'Lato', loaded in via Google Fonts
 
 ## Technologies Used
 
