@@ -233,7 +233,7 @@
 
 #### Wishlist
 
-![Product detail](/documentation/media/testing/htmlvalidator-wishlist.png)
+![Product detail](/documentation/media/testing/htmlvalidator-productswishlist.png)
 
 #### About
 

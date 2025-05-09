@@ -163,7 +163,6 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-
     if 'bag' in request.session:
         del request.session['bag']
 
@@ -173,6 +172,5 @@ def checkout_success(request, order_number):
         f"{order.order_number}. A confirmation email has been sent to "
         f"{order.email}."
     )
-
 
     return render(request, 'checkout/checkout_success.html', {'order': order})

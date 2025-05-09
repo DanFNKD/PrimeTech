@@ -119,14 +119,15 @@ class OrderLineItem(models.Model):
         """
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
-        self.order.update_total()  
+        self.order.update_total()
 
     def delete(self, *args, **kwargs):
         """
-        Override the delete method to update order total when a line item is removed.
+        Override the delete method to update order total
+        when a line item is removed.
         """
         super().delete(*args, **kwargs)
-        self.order.update_total()  
+        self.order.update_total()
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
