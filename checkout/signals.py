@@ -19,8 +19,7 @@ def update_on_delete(sender, instance, **kwargs):
 def send_order_confirmation_email(sender, instance, created, **kwargs):
     if created:
         subject = f"Order Confirmation - {instance.order_number}"
-        message = f"Thank you for your order! Your order number
-        is {instance.order_number}."
+        message = f"Thank you for your order! Your order number is {instance.order_number}."
         recipient = instance.email
 
         send_mail(
