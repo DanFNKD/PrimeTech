@@ -417,6 +417,8 @@ Product images [Google](https://images.google.co.uk/).
 
 About us copy written by [ChatGPT](https://chatgpt.com/).
 
+ERD created using [dbdiagram.io](https://dbdiagram.io).
+
 ## Acknowledgments
 
 I'd like to thank my girlfriend for putting up with me throughout this process and my new Mentor Daniel Hamilton for his help.
