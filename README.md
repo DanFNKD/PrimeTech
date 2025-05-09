@@ -151,7 +151,7 @@ New users create an account by filling in a simple registration form. There is v
 Users can sign in using their verified credentials.
 ![Image](/documentation/media/images/features-login.png)
 
-#### Sign out
+#### Sign out
 
 Users can securely log out from the dropdown menu.
 ![Image](/documentation/media/images/features-logout.png)
@@ -263,6 +263,10 @@ Users are encouraged to sign up and subscribe to more updates from the site.
 ![Products Page](/documentation/media/images/wireframes-products.png)
 
 ![Mobile Page](/documentation/media/images/wireframes-mobile.png)
+
+### Entity Relationship Diagram
+
+![ERD](/documentation/media/images/ux-erd.png)
 
 ## Technologies Used
 
