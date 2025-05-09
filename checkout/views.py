@@ -163,19 +163,9 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    subject = f"Order Confirmation - {order.order_number}"
-    message = (
-        f"Thank you for your order!\n\n"
-        f"Your order number is {order.order_number}.\n"
-        f"A confirmation email has been sent to {order.email}.\n\n"
-        f"Thank you for shopping with us at PrimeTech!"
-    )
 
-    send_mail(
-        subject, message, settings.DEFAULT_FROM_EMAIL, [order.email],
-        fail_silently=False
-    )
-
+    if 'bag' in request.session:
+        del request.session['bag']
 
     messages.success(
         request,
@@ -183,10 +173,6 @@ def checkout_success(request, order_number):
         f"{order.order_number}. A confirmation email has been sent to "
         f"{order.email}."
     )
-
-
-    if 'bag' in request.session:
-        del request.session['bag']
 
 
     return render(request, 'checkout/checkout_success.html', {'order': order})

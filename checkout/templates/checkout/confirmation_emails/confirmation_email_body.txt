@@ -1,6 +1,6 @@
 Hello {{ order.full_name }},
 
-Thank you for shopping with Boutique Ado! We're thrilled to confirm your order. Here are the details:
+Thank you for shopping with PrimeTech! We're thrilled to confirm your order. Here are the details:
 
 **Order Details**
 - **Order Number**: {{ order.order_number }}
