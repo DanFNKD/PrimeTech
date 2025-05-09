@@ -16,9 +16,11 @@ Access the live site [here](https://primetechfnkd-382d679752d9.herokuapp.com/).
   * [Strategy design](#strategy-design)
   * [Business Plan](#business-plan)
   * [Wireframes](#wireframes)
+  * [ERD](#entity-relationship-diagram)
 * [Technologies Used](#technologies-used)
 * [Testing](#testing)
 * [Bugs](#bugs)
+* [How to fork and clone](#how-to-fork-and-clone)
 * [Deployment](#deployment)
 * [Credits](#credits)
 * [Acknowledgements](#acknowledgements)
@@ -326,6 +328,23 @@ Whilst testing, I noticed that the order total wasn't pulling through to the dja
 ![Image](/documentation/media/images/bug-image2.png)
 
 Whilst testing, I noticed that images weren't corrected. I moved them into static to help this.
+
+## How to Fork and Clone
+
+### Forking the Repository
+
+1. Log in to your GitHub account.
+2. Navigate to the repository for this project - PrimeTech.
+3. Click the Fork button in the top right corner of the page to create a copy under your own GitHub account.
+
+### Cloning the Repository
+
+1. After forking, go to your forked version of the PrimeTech repository
+2. Click the green Code button and choose your preferred method.
+3. Copy the provided URL.
+4. Open your terminal or code editor and change to the directory where you'd like to store the project.
+5. Type 'git clone' into terminal and then paste the link you copied in step 3.
+6. Press Enter. The repository will be cloned to your local machine.
 
 ## Deployment
 
