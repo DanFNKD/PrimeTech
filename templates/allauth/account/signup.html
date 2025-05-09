@@ -29,6 +29,19 @@
       {{ form.password2|as_crispy_field }}
     </div>
 
+    {# ✅ Render remaining form fields, just in case #}
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
+      {% if field.name not in 'email username password1 password2' %}
+        <div class="mb-3">
+          {{ field|as_crispy_field }}
+        </div>
+      {% endif %}
+    {% endfor %}
+
     <button type="submit" class="btn btn-primary">Sign Up</button>
   </form>
 {% endblock %}
