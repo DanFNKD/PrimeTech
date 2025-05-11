@@ -37,6 +37,7 @@ class ProductForm(forms.ModelForm):
             raise forms.ValidationError("Rating must be between 0 and 5.")
         return rating
 
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
