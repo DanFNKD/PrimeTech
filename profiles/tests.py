@@ -4,10 +4,14 @@ from django.contrib.auth.models import User
 from profiles.models import UserProfile
 from checkout.models import Order
 
+
 class ProfileViewTest(TestCase):
     def setUp(self):
         self.client = Client()
-        self.user = User.objects.create_user(username='testuser', password='pass123')
+        self.user = User.objects.create_user(
+            username='testuser',
+            password='pass123'
+        )
         self.profile = UserProfile.objects.get(user=self.user)
         self.url = reverse('profile')
         self.client.login(username='testuser', password='pass123')
@@ -50,12 +54,21 @@ class ProfileViewTest(TestCase):
         response = self.client.post(self.url, data=post_data)
         self.assertEqual(response.status_code, 200)
         messages = list(response.context['messages'])
-        self.assertTrue(any("failed" in str(message).lower() for message in messages))
+        self.assertTrue(
+            any(
+                "failed" in str(message).lower()
+                for message in messages
+            )
+        )
+
 
 class OrderHistoryViewTest(TestCase):
     def setUp(self):
         self.client = Client()
-        self.user = User.objects.create_user(username='testuser2', password='pass123')
+        self.user = User.objects.create_user(
+            username='testuser2',
+            password='pass123'
+        )
         self.profile = UserProfile.objects.get(user=self.user)
         self.order = Order.objects.create(
             full_name="Test User",
