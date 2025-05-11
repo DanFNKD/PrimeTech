@@ -22,7 +22,12 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -51,7 +56,11 @@ class Product(models.Model):
 
 
 class Wishlist(models.Model):
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='wishlists')
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.CASCADE,
+        related_name='wishlists'
+    )
     name = models.CharField(max_length=255, default='My Wishlist')
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -60,7 +69,11 @@ class Wishlist(models.Model):
 
 
 class WishlistItem(models.Model):
-    wishlist = models.ForeignKey(Wishlist, on_delete=models.CASCADE, related_name='items')
+    wishlist = models.ForeignKey(
+        Wishlist,
+        on_delete=models.CASCADE,
+        related_name='items'
+    )
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     added_at = models.DateTimeField(auto_now_add=True)
 
@@ -72,9 +85,15 @@ class WishlistItem(models.Model):
 
 
 class Review(models.Model):
-    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='reviews')
+    product = models.ForeignKey(
+        'Product',
+        on_delete=models.CASCADE,
+        related_name='reviews'
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rating = models.PositiveIntegerField(choices=[(i, str(i)) for i in range(1, 6)])
+    rating = models.PositiveIntegerField(
+        choices=[(i, str(i)) for i in range(1, 6)]
+    )
     comment = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
