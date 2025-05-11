@@ -12,7 +12,9 @@ from profiles.models import UserProfile
 
 
 def all_products(request):
-    products = Product.objects.all().annotate(avg_rating=Avg('reviews__rating'))
+    products = Product.objects.all().annotate(
+        avg_rating=Avg('reviews__rating')
+    )
     query = None
     categories = None
     sort = None
@@ -41,10 +43,16 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request,
+                    "You didn't enter any search criteria!"
+                )
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = (
+                Q(name__icontains=query) |
+                Q(description__icontains=query)
+            )
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -90,13 +98,22 @@ def submit_review(request, product_id):
                 }
             )
             product.update_rating()
-           
+
             if created:
-                messages.success(request, "Your rating has been submitted.")
+                messages.success(
+                    request,
+                    "Your rating has been submitted."
+                )
             else:
-                messages.success(request, "Your rating has been updated.")
+                messages.success(
+                    request,
+                    "Your rating has been updated."
+                )
         else:
-            messages.error(request, "There was an error submitting your rating.")
+            messages.error(
+                request,
+                "There was an error submitting your rating."
+            )
 
     return redirect(reverse('product_detail', args=[product.id]))
 
@@ -119,9 +136,15 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(
+                request,
+                'Successfully added product!'
+            )
             return redirect(reverse('product_detail', args=[product.id]))
-        messages.error(request, 'Failed to add product. Ensure the form is valid.')
+        messages.error(
+            request,
+            'Failed to add product. Ensure the form is valid.'
+        )
     else:
         form = ProductForm()
 
@@ -144,10 +167,16 @@ def edit_product(request, product_id):
             form.save()
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
-        messages.error(request, 'Failed to update product. Ensure the form is valid.')
+        messages.error(
+            request,
+            'Failed to update product. Ensure the form is valid.'
+        )
     else:
         form = ProductForm(instance=product)
-        messages.info(request, f'You are editing {product.name}')
+        messages.info(
+            request,
+            f'You are editing {product.name}'
+        )
 
     template = 'products/edit_product.html'
     context = {
