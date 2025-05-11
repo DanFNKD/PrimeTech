@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from .models import FAQ
 
+
 class FAQModelTest(TestCase):
     def test_str_method(self):
         faq = FAQ.objects.create(
@@ -9,6 +10,7 @@ class FAQModelTest(TestCase):
             answer="Our return policy is 30 days with receipt."
         )
         self.assertEqual(str(faq), "What is your return policy?")
+
 
 class FAQViewTest(TestCase):
     def setUp(self):

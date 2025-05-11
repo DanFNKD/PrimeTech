@@ -8,7 +8,10 @@ from django.views.decorators.http import require_POST
 # Mailchimp settings from environment
 MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
 MAILCHIMP_LIST_ID = os.getenv('MAILCHIMP_LIST_ID')
-MAILCHIMP_DC = MAILCHIMP_API_KEY.split('-')[-1] if MAILCHIMP_API_KEY else None  # e.g., 'us7'
+MAILCHIMP_DC = (
+    MAILCHIMP_API_KEY.split('-')[-1]
+    if MAILCHIMP_API_KEY else None
+)    # e.g., 'us7'
 
 
 def index(request):
@@ -51,7 +54,10 @@ def subscribe(request):
         return redirect(request.META.get('HTTP_REFERER', '/'))
 
     # Mailchimp API request
-    url = f"https://{MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/{MAILCHIMP_LIST_ID}/members"
+    url = (
+        f"https://{MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/"
+        f"{MAILCHIMP_LIST_ID}/members"
+    )
     data = {
         "email_address": email,
         "status": "subscribed"
