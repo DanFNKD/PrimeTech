@@ -23,6 +23,7 @@ Access the live site [here](https://primetechfnkd-382d679752d9.herokuapp.com/).
 * [Bugs](#bugs)
 * [How to fork and clone](#how-to-fork-and-clone)
 * [Deployment](#deployment)
+* [Prerequisites](#prerequisites)
 * [Credits](#credits)
 * [Acknowledgements](#acknowledgements)
 
@@ -408,6 +409,12 @@ DATABASES = {
 18. Add the Heroku app URL to 'allowed hosts' in settings.py
 19. Commit and push
 20. Create a secret key and add to CONFIG VARS in heroku
+
+## Prerequisites
+
+- A Cloudinary account will be needed, create one for free at https://cloudinary.com.
+
+- An account with an email service that can be used to send confirmations and notification to users.
 
 ## Credits
 
