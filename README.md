@@ -347,7 +347,27 @@ Whilst testing, I noticed that the order total wasn't pulling through to the dja
 ![Image](/documentation/media/images/bug-image1.png)
 ![Image](/documentation/media/images/bug-image2.png)
 
-Whilst testing, I noticed that images weren't corrected. I moved them into static to help this.
+Whilst testing, I noticed that images weren't displaying correctly in production. This was caused by improper media file handling. The issue was resolved by integrating Cloudinary for image hosting and ensuring the correct URLs are rendered in templates.
+
+#### User Registration
+
+Whilst testing, the registration form failed to create users and produced errors in the console. This was caused by a logic issue in the view. The form handling and validation were corrected, and user accounts are now created successfully.
+
+#### No CRUD feedback
+
+Users weren’t receiving confirmation messages when performing actions such as adding, updating, or deleting products. The Django messages framework was implemented, and relevant views and templates were updated to provide proper feedback for user actions.
+
+#### Negative Price and Rating Values
+
+Forms for adding or editing products allowed negative values for price and rating fields. This was fixed by applying validation to ensure only non-negative integers are accepted, using MinValueValidator(0) on relevant fields.
+
+#### PEP8 Issues
+
+Code in multiple python files included line-length and formatting violations. These were corrected using a linter and manual formatting to ensure full PEP8 compliance.
+
+#### Exposed .env File
+
+The .env file containing sensitive information, including SECRET_KEY, was previously committed to the repository. This posed a security risk. The file was removed from version control and all keys, including the secret key and third-party service keys, were rotated and the file was added to .gitignore.
 
 ## How to Fork and Clone
 
