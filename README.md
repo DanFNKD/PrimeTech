@@ -373,7 +373,16 @@ Whilst testing, I noticed that images weren't corrected. I moved them into stati
 1. Create an account on Heroku and log in. 
 2. Create a new app and navigate to 'settings'.
 3. Click 'Reveal config variables'.
-4. Add a new variable with the key: `DATABASE_URL` with the value being the noted url from PostgreSQL.
+4. Add the following environment variables:
+   - `DATABASE_URL` – the Postgres URL
+   - `SECRET_KEY` – your Django secret key
+   - `CLOUDINARY_URL` – your Cloudinary API key (to display images correctly)
+   - `EMAIL_HOST_USER` – your email address
+   - `EMAIL_HOST_PASSWORD` – your email password or app password
+   - `STRIPE_PUBLIC_KEY` – your Stripe publishable key
+   - `STRIPE_SECRET_KEY` – your Stripe secret key
+   - `MAILCHIMP_API_KEY` – your Mailchimp API key (if used)
+   - `MAILCHIMP_AUDIENCE_ID` – your Mailchimp audience/list ID
 5. In the IDE go to your main app's settings file and add the heroku app name to the allowed hosts. Be sure to append `.herokuapp.com` to your app's name. 
 6. Add EMAIL_HOST_PASSWORD and the value as the password for the email service.
 In the Gitpod terminal, install  `pip3 install dj_database_url==2.2.0 psycopg2`
@@ -403,18 +412,27 @@ DATABASES = {
 ```
 13. In the terminal, type in `pip3 install gunicorn==23.0.0`
 14. In the terminal, run `pip freeze > requirements.txt`
-15. Create a Procfile
-16. In the Procfile, type in `web: gunicorn primetech.wsgi --log-file -` 
-17. In the terminal, type in `heroku config:set DISABLE_COLLECTSTATIC=1`
-18. Add the Heroku app URL to 'allowed hosts' in settings.py
-19. Commit and push
-20. Create a secret key and add to CONFIG VARS in heroku
+15. Create a Procfile in the root directory and add `web: gunicorn primetech.wsgi --log-file -` 
+16. In the terminal, type in `heroku config:set DISABLE_COLLECTSTATIC=1`
+17. Commit and push your changes to GitHub.
+18. On Heroku, go to the Deploy tab, connect to GitHub and deploy from the main branch.
+19. Click "View App" to launch the deployed site.
 
 ## Prerequisites
 
-- A Cloudinary account will be needed, create one for free at https://cloudinary.com.
+- A **Cloudinary** account will be needed to store and serve media files (e.g. product images). You can create one for free at [https://cloudinary.com](https://cloudinary.com).
+  
+- An account with an **email service** (such as Gmail or SendGrid) that can be used to send confirmation and notification emails to users. This will be needed to configure `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD`.
 
-- An account with an email service that can be used to send confirmations and notification to users.
+- A **Heroku** account is required for cloud deployment. You can sign up at [https://heroku.com](https://heroku.com).
+
+- A **Mailchimp** account (if using newsletter functionality), with an audience/list set up. You'll need the API key and Audience ID.
+
+- A **Stripe** account for handling secure payment processing. You’ll need your publishable key, secret key, and optionally a webhook secret.
+
+- Ensure you have **Python 3**, **Pip**, and **Git** installed locally, or use a cloud IDE like Gitpod.
+
+- A **PostgreSQL database URL** (you can provision this through Heroku Postgres or an external provider).
 
 ## Credits
 
